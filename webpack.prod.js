@@ -1,3 +1,11 @@
+/*
+ * @Description: 
+ * @Version: 1.0
+ * @Autor: Pumpking
+ * @Date: 2020-03-03 19:59:49
+ * @LastEditors: Pumpking
+ * @LastEditTime: 2020-03-03 22:40:35
+ */
 const webpack = require("webpack");
 const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
 const merge = require("webpack-merge");
@@ -12,7 +20,10 @@ module.exports = merge(common, {
   plugins: [
     new CleanWebpackPlugin(),
     new UglifyJSPlugin({
-      sourceMap: true
+      sourceMap: true,
+      uglifyOptions: {
+        mangle: false
+      }
     }),
     new webpack.DefinePlugin({
       "process.env.NODE_ENV": JSON.stringify("production")

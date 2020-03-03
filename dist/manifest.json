@@ -9,14 +9,10 @@
   "manifest.config.js.map": "manifest.config.bundle.js.map",
   "manifest.router.js": "manifest.router.bundle.js",
   "manifest.router.js.map": "manifest.router.bundle.js.map",
-  "manifest.vendor.js": "manifest.vendor.bundle.js",
-  "manifest.vendor.js.map": "manifest.vendor.bundle.js.map",
   "router.js": "router.bundle.js",
   "router.js.map": "router.bundle.js.map",
-  "vendor.js": "vendor.bundle.js",
-  "vendor.js.map": "vendor.bundle.js.map",
-  "vendors.vendor.js": "vendors.vendor.bundle.js",
-  "vendors.vendor.js.map": "vendors.vendor.bundle.js.map",
+  "vendors.router.js": "vendors.router.bundle.js",
+  "vendors.router.js.map": "vendors.router.bundle.js.map",
   "favicon.ico": "favicon.ico",
   "index.html": "index.html"
 }
