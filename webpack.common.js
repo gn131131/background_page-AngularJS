@@ -4,14 +4,17 @@
  * @Autor: Pumpking
  * @Date: 2020-02-11 16:13:25
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-03 14:08:59
+ * @LastEditTime: 2020-03-03 19:51:44
  */
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: {
-    app: "./src/index.ts"
+    vendor: ['angular', '@uirouter/angularjs', 'angular-ui-bootstrap'],
+    app: "./src/index.js",
+    config: "./src/js/config.js",
+    router: "./src/js/router.js"
   },
   output: {
     filename: "[name].bundle.js",
