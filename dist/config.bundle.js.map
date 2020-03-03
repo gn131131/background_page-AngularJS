@@ -1,1 +1,1 @@
-{"version":3,"sources":["webpack:///config.bundle.js"],"names":["window","webpackJsonp","push","16","module","exports"],"mappings":"CAACA,OAAOC,aAAaD,OAAOC,cAAc,IAAIC,KAAK,CAAC,CAAC,GAAG,CAACC,GAAG,SAASC,EAAOC,MAAY,CAAC,CAAC,GAAG","file":"config.bundle.js","sourcesContent":["(window.webpackJsonp=window.webpackJsonp||[]).push([[1],{16:function(module,exports){}},[[16,3]]]);"],"sourceRoot":""}
+{"version":3,"sources":[],"names":[],"mappings":"","file":"config.bundle.js","sourceRoot":""}
