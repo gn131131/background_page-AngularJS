@@ -4,48 +4,41 @@
  * @Autor: Pumpking
  * @Date: 2020-02-11 16:13:25
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-03 22:35:45
+ * @LastEditTime: 2020-03-04 13:40:45
  */
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: {
-    app: "./src/index.js",
-    config: "./src/js/config.js",
-    router: "./src/js/router.js"
+    app: ["./src/index.js", "./src/js/config.js", "./src/js/router.js"]
   },
   output: {
     filename: "[name].bundle.js",
     path: path.resolve(__dirname, "dist")
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.css$/,
         use: ["style-loader", "css-loader"]
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              outputPath: 'images/'
-            }
+        use: [{
+          loader: "file-loader",
+          options: {
+            outputPath: 'images/'
           }
-        ]
+        }]
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              outputPath: 'fonts/'
-            }
+        use: [{
+          loader: "file-loader",
+          options: {
+            outputPath: 'fonts/'
           }
-        ]
+        }]
       },
       {
         test: /\.js$/,

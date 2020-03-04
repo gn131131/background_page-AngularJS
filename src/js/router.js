@@ -4,12 +4,9 @@
  * @Autor: Pumpking
  * @Date: 2020-03-03 18:23:06
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-03 21:59:42
+ * @LastEditTime: 2020-03-04 13:48:49
  */
-import angular from "angular";
-import uirouter from "angular-ui-router";
-
-let myApp = angular.module('app', [uirouter]);
+import myApp from "../index";
 
 myApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
   $urlRouterProvider
