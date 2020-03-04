@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-03-03 19:59:49
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-03 22:46:56
+ * @LastEditTime: 2020-03-04 15:53:26
  */
 const webpack = require("webpack");
 const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
@@ -31,7 +31,8 @@ module.exports = merge(common, {
       new UglifyJSPlugin({
         sourceMap: true,
         uglifyOptions: {
-          mangle: false
+          mangle: false,
+          compress: true
         }
       })
     ]

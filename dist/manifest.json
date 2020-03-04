@@ -1,14 +1,12 @@
 {
-  "vendors.app.welcomeCtrl.js": "vendors.app.welcomeCtrl.bundle.js",
-  "vendors.app.welcomeCtrl.js.map": "vendors.app.welcomeCtrl.bundle.js.map",
-  "app.js": "app.bundle.js",
-  "app.js.map": "app.bundle.js.map",
+  "app.js": "0.build.js?2993813b9194c52c434a",
+  "app.js.map": "0.build.js.map?2993813b9194c52c434a",
   "manifest.app.js": "manifest.app.bundle.js",
   "manifest.app.js.map": "manifest.app.bundle.js.map",
-  "manifest.welcomeCtrl.js": "manifest.welcomeCtrl.bundle.js",
-  "manifest.welcomeCtrl.js.map": "manifest.welcomeCtrl.bundle.js.map",
-  "welcomeCtrl.js": "welcomeCtrl.bundle.js",
-  "welcomeCtrl.js.map": "welcomeCtrl.bundle.js.map",
+  "vendors.app.js": "2.build.js?183b94a6f73c9f29017d",
+  "vendors.app.js.map": "2.build.js.map?183b94a6f73c9f29017d",
+  "3.build.js?7aab48903604725ec03d": "3.build.js?7aab48903604725ec03d",
+  "3.build.js.map?7aab48903604725ec03d": "3.build.js.map?7aab48903604725ec03d",
   "favicon.ico": "favicon.ico",
   "index.html": "index.html"
 }

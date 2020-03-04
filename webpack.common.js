@@ -4,18 +4,19 @@
  * @Autor: Pumpking
  * @Date: 2020-02-11 16:13:25
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-04 15:17:20
+ * @LastEditTime: 2020-03-04 15:59:19
  */
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: {
-    app: ["./src/index.js", "./src/js/config.js", "./src/js/router.js"]
+    app: "./src/index.js"
   },
   output: {
     filename: "[name].bundle.js",
-    path: path.resolve(__dirname, "dist")
+    path: path.resolve(__dirname, "dist"),
+    chunkFilename: '[id].build.js?[chunkhash]',
   },
   module: {
     rules: [{
@@ -49,6 +50,11 @@ module.exports = {
             presets: ["@babel/preset-env"]
           }
         }
+      },
+      {
+        test: /\.html$/,
+        loader: 'raw-loader',
+        exclude: /node_modules/
       }
     ]
   },

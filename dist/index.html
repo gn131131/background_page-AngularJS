@@ -2,8 +2,36 @@
  * @Description: 
  * @Version: 1.0
  * @Autor: Pumpking
- * @Date: 2020-03-04 14:42:02
+ * @Date: 2020-02-11 16:13:24
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-04 14:42:06
+ * @LastEditTime: 2020-03-04 14:51:43
  -->
-<div>{{text}}</div><script type="text/javascript" src="manifest.app.bundle.js"></script><script type="text/javascript" src="vendors.app.welcomeCtrl.bundle.js"></script><script type="text/javascript" src="app.bundle.js"></script><script type="text/javascript" src="manifest.welcomeCtrl.bundle.js"></script><script type="text/javascript" src="welcomeCtrl.bundle.js"></script>
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport" />
+  <meta content="yes" name="apple-mobile-web-app-capable" />
+  <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+  <meta content="telephone=no" name="format-detection" />
+  <meta content="email=no" name="format-detection" />
+  <meta name="description" content="AngularJS" />
+  <meta name="keywords" content="angular" />
+  <meta name="author" content="Pumpking" />
+  <title>AngularJS</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="favicon.ico"></head>
+
+<body ng-app="app">
+  <div>
+    <ul>
+      <li><a ui-sref="welcome" ui-sref-active="red">home</a></li>
+    </ul>
+  </div>
+  <div>
+    <ui-view></ui-view>
+  </div>
+<script type="text/javascript" src="manifest.app.bundle.js"></script><script type="text/javascript" src="2.build.js?183b94a6f73c9f29017d"></script><script type="text/javascript" src="0.build.js?2993813b9194c52c434a"></script></body>
+
+</html>
