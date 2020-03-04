@@ -4,41 +4,48 @@
  * @Autor: Pumpking
  * @Date: 2020-03-03 18:23:06
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-04 17:08:02
+ * @LastEditTime: 2020-03-04 17:47:35
  */
-const router = ['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
-  'ngInject';  //注入服务 就不需要使用$inject了
+const router = ['$urlRouterProvider', '$stateProvider', function ($urlRouterProvider, $stateProvider) {
+  $urlRouterProvider.otherwise('/home');
+
   $stateProvider
-    .state('welcome', {
-      url: '/welcome',
-      templateProvider: ($q) => {
-        let deferred = $q.defer();
-        require.ensure([], () => {
-          let template = require('./controller/home/welcomeTemplate.html');
-          deferred.resolve(template);
-        });
-        return deferred.promise;
-      },
-      controller: "WelcomeCtrl",
-      controllerAs: "vm",
+    .state('home', {
+      url: '/home',
+      template: require('./controller/home/home.template.html').default,
+      controller: 'HomeController as vm',
       resolve: {
-        loadMyCtrl: ($q, $ocLazyLoad) => {
-          'ngInject';
-          let deferred = $q.defer();
-          require.ensure([], () => {
-            let module = require("./controller/home/welcome.routing").default;
-            $ocLazyLoad.load({
-              name: module.name
+        loadHomeController: ($q, $ocLazyLoad) => {
+          return $q((resolve) => {
+            require.ensure([], () => {
+              let module = require('./controller/home/home').default;
+              $ocLazyLoad.load({
+                name: module.name
+              });
+              resolve(module.controller);
             });
-            deferred.resolve(module.controller)
           });
-          return deferred.promise;
         }
       }
-    });
-
-  $urlRouterProvider
-    .otherwise('/welcome');
+    })
+    .state('welcome', {
+      url: '/welcome',
+      template: require('./controller/welcome/welcome.template.html').default,
+      controller: 'WelcomeController as vm',
+      resolve: {
+        loadWelcomeController: ($q, $ocLazyLoad) => {
+          return $q((resolve) => {
+            require.ensure([], () => {
+              let module = require('./controller/welcome/welcome').default;
+              $ocLazyLoad.load({
+                name: module.name
+              });
+              resolve(module.controller);
+            });
+          });
+        }
+      }
+    })
 }];
 
 export default router;

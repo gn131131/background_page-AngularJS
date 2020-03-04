@@ -9,7 +9,7 @@
 import angular from "angular";
 
 export default angular
-  .module('home.controller', [])
-  .controller('HomeController', ['$scope', function ($scope) {
-    $scope.text = "home controller";
+  .module('welcome.controller', [])
+  .controller('WelcomeController', ['$scope', function ($scope) {
+    $scope.text = "welcome controller";
   }]);
