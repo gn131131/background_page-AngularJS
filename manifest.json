@@ -1,12 +1,14 @@
 {
-  "app.js": "0.build.js?2993813b9194c52c434a",
-  "app.js.map": "0.build.js.map?2993813b9194c52c434a",
+  "app.js": "0.build.js?8257dff4468e10d06520",
+  "app.js.map": "0.build.js.map?8257dff4468e10d06520",
   "manifest.app.js": "manifest.app.bundle.js",
   "manifest.app.js.map": "manifest.app.bundle.js.map",
   "vendors.app.js": "2.build.js?183b94a6f73c9f29017d",
   "vendors.app.js.map": "2.build.js.map?183b94a6f73c9f29017d",
-  "3.build.js?7aab48903604725ec03d": "3.build.js?7aab48903604725ec03d",
-  "3.build.js.map?7aab48903604725ec03d": "3.build.js.map?7aab48903604725ec03d",
+  "3.build.js?8d01b48a279a779ba62c": "3.build.js?8d01b48a279a779ba62c",
+  "3.build.js.map?8d01b48a279a779ba62c": "3.build.js.map?8d01b48a279a779ba62c",
+  "4.build.js?79df5b19bbf270380983": "4.build.js?79df5b19bbf270380983",
+  "4.build.js.map?79df5b19bbf270380983": "4.build.js.map?79df5b19bbf270380983",
   "favicon.ico": "favicon.ico",
   "index.html": "index.html"
 }
