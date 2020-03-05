@@ -21,7 +21,7 @@ const ocLazyLoadFn = ($ocLazyLoad, urls) => {
   return Promise.all(arr);
 }
 
-const router = ['$urlRouterProvider', '$stateProvider', function ($urlRouterProvider, $stateProvider) {
+const router = ['$urlRouterProvider', '$stateProvider', ($urlRouterProvider, $stateProvider) => {
   $urlRouterProvider.otherwise('/login');
 
   $stateProvider

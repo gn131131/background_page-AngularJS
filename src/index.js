@@ -16,6 +16,7 @@ import "./style.css";
 import uirouter from "angular-ui-router";
 import oclazyload from "oclazyload";
 
-import router from "./js/router"
+import config from "./js/config";
+import router from "./js/router";
 
-angular.module('app', [uirouter, oclazyload]).config(router);
+angular.module('app', [uirouter, oclazyload]).config(config).config(router);

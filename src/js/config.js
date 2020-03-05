@@ -4,5 +4,10 @@
  * @Autor: Pumpking
  * @Date: 2020-03-03 19:50:27
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-04 16:23:36
+ * @LastEditTime: 2020-03-05 16:56:52
  */
+const config = ['$locationProvider', ($locationProvider) => {
+  $locationProvider.html5Mode(true);
+}];
+
+export default config;
