@@ -1,2 +1,2 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[2],{14:function(module,exports){}}]);
-//# sourceMappingURL=2.build.js.map?fea6aa718bdc5a3fd092
+(window.webpackJsonp=window.webpackJsonp||[]).push([[2],{13:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),__webpack_exports__.default=angular.module("login.controller",[]).controller("LoginController",["$scope",function($scope){$scope.background=Math.ceil(3*Math.random()),$scope.deleteInput=function(type){switch(type){case"username":$scope.username="";break;case"password":$scope.password=""}}}])}}]);
+//# sourceMappingURL=2.build.js.map?5e978fbb727448c311c6
