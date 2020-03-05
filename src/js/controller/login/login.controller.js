@@ -6,7 +6,6 @@
  * @LastEditors: Pumpking
  * @LastEditTime: 2020-03-05 16:50:08
  */
-
 export default angular
   .module('login.controller', [])
   .controller('LoginController', ['$scope', function ($scope) {
