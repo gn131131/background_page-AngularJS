@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-03-03 18:23:06
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-04 17:47:35
+ * @LastEditTime: 2020-03-05 11:58:45
  */
 const router = ['$urlRouterProvider', '$stateProvider', function ($urlRouterProvider, $stateProvider) {
   $urlRouterProvider.otherwise('/home');
@@ -13,39 +13,36 @@ const router = ['$urlRouterProvider', '$stateProvider', function ($urlRouterProv
     .state('home', {
       url: '/home',
       template: require('./controller/home/home.template.html').default,
-      controller: 'HomeController as vm',
+      controller: 'HomeController',
+      controllerAs: 'vm',
       resolve: {
-        loadHomeController: ($q, $ocLazyLoad) => {
-          return $q((resolve) => {
-            require.ensure([], () => {
-              let module = require('./controller/home/home').default;
-              $ocLazyLoad.load({
-                name: module.name
-              });
-              resolve(module.controller);
-            });
-          });
+        loadHomeController: ($ocLazyLoad) => {
+          return ocLazyLoadFn($ocLazyLoad, './controller/home/home');
         }
       }
     })
     .state('welcome', {
       url: '/welcome',
       template: require('./controller/welcome/welcome.template.html').default,
-      controller: 'WelcomeController as vm',
+      controller: 'WelcomeController',
+      controllerAs: 'vm',
       resolve: {
-        loadWelcomeController: ($q, $ocLazyLoad) => {
-          return $q((resolve) => {
-            require.ensure([], () => {
-              let module = require('./controller/welcome/welcome').default;
-              $ocLazyLoad.load({
-                name: module.name
-              });
-              resolve(module.controller);
-            });
-          });
+        loadWelcomeController: ($ocLazyLoad) => {
+          return ocLazyLoadFn($ocLazyLoad, './controller/welcome/welcome');
         }
       }
     })
 }];
+
+const ocLazyLoadFn = ($ocLazyLoad, url) => {
+  return new Promise((resolve) => {
+    import(`${url}`).then(module => {
+      $ocLazyLoad.load({
+        name: module.default.name
+      });
+      resolve(module.default.controller);
+    });
+  });
+}
 
 export default router;
