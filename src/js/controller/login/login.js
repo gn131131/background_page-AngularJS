@@ -6,8 +6,7 @@
  * @LastEditors: Pumpking
  * @LastEditTime: 2020-03-04 17:29:10
  */
-import angular from "angular";
-import controller from "./home.controller"
+import controller from "./login.controller"
 
 export default angular
-  .module('home', [controller.name]);
+  .module('login', [controller.name]);

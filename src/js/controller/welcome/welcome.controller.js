@@ -6,8 +6,6 @@
  * @LastEditors: Pumpking
  * @LastEditTime: 2020-03-04 17:30:53
  */
-import angular from "angular";
-
 export default angular
   .module('welcome.controller', [])
   .controller('WelcomeController', ['$scope', function ($scope) {

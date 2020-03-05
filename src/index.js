@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-02-11 16:13:25
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-04 17:44:36
+ * @LastEditTime: 2020-03-05 16:07:44
  */
 "use strict";
 
@@ -13,7 +13,6 @@ import "./vendor/flexble/flexible";
 
 import "./style.css";
 
-import angular from "angular";
 import uirouter from "angular-ui-router";
 import oclazyload from "oclazyload";
 

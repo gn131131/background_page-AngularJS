@@ -4,20 +4,35 @@
  * @Autor: Pumpking
  * @Date: 2020-03-03 18:23:06
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-05 11:58:45
+ * @LastEditTime: 2020-03-05 13:43:53
  */
+const ocLazyLoadFn = ($ocLazyLoad, urls) => {
+  let arr = [];
+  urls.map(item => {
+    arr.push(new Promise((resolve) => {
+      import(`${item}`).then(module => {
+        $ocLazyLoad.load({
+          name: module.default.name
+        });
+        resolve(module.default.controller);
+      });
+    }));
+  });
+  return Promise.all(arr);
+}
+
 const router = ['$urlRouterProvider', '$stateProvider', function ($urlRouterProvider, $stateProvider) {
-  $urlRouterProvider.otherwise('/home');
+  $urlRouterProvider.otherwise('/login');
 
   $stateProvider
-    .state('home', {
-      url: '/home',
-      template: require('./controller/home/home.template.html').default,
-      controller: 'HomeController',
+    .state('login', {
+      url: '/login',
+      template: require('./controller/login/login.template.html').default,
+      controller: 'LoginController',
       controllerAs: 'vm',
       resolve: {
-        loadHomeController: ($ocLazyLoad) => {
-          return ocLazyLoadFn($ocLazyLoad, './controller/home/home');
+        loadLoginController: ($ocLazyLoad) => {
+          return ocLazyLoadFn($ocLazyLoad, ['./controller/login/login']);
         }
       }
     })
@@ -28,21 +43,10 @@ const router = ['$urlRouterProvider', '$stateProvider', function ($urlRouterProv
       controllerAs: 'vm',
       resolve: {
         loadWelcomeController: ($ocLazyLoad) => {
-          return ocLazyLoadFn($ocLazyLoad, './controller/welcome/welcome');
+          return ocLazyLoadFn($ocLazyLoad, ['./controller/welcome/welcome']);
         }
       }
     })
 }];
-
-const ocLazyLoadFn = ($ocLazyLoad, url) => {
-  return new Promise((resolve) => {
-    import(`${url}`).then(module => {
-      $ocLazyLoad.load({
-        name: module.default.name
-      });
-      resolve(module.default.controller);
-    });
-  });
-}
 
 export default router;
