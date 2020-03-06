@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-03-06 14:16:56
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-06 14:58:29
+ * @LastEditTime: 2020-03-06 22:36:33
  */
 const path = require("path");
 const merge = require("webpack-merge");
@@ -19,7 +19,8 @@ module.exports = merge(common, {
     contentBase: path.join(__dirname, "dist"),
     port: 8001,
     compress: true,
-    hot: true
+    hot: true,
+    historyApiFallback: true
   },
   plugins: [
     new webpack.NamedModulesPlugin(),
