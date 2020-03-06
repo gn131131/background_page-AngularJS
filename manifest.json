@@ -7,6 +7,7 @@
   "app.js": "/5.build.js?0a921aa6676bb1935781",
   "manifest.app.js": "/manifest.app.bundle.js",
   "vendors.app.js": "/7.build.js?824e75cf9f1079a6403f",
+  "404.html": "/404.html",
   "favicon.ico": "/favicon.ico",
   "images/2.jpg": "/images/597fbd0a7bc16307d75c8065ca7589b6.jpg",
   "images/3.jpg": "/images/a17310883c207097ba42a32154dc205b.jpg",
