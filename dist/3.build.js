@@ -1,2 +1,1 @@
 (window.webpackJsonp=window.webpackJsonp||[]).push([[3],{15:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),__webpack_exports__.default=angular.module("welcome.controller",[]).controller("WelcomeController",["$scope",function($scope){$scope.text="welcome controller"}])}}]);
-//# sourceMappingURL=3.build.js.map?7e12a512305beb53178d
