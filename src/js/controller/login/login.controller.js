@@ -4,23 +4,36 @@
  * @Autor: Pumpking
  * @Date: 2020-03-04 14:41:52
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-06 13:40:14
+ * @LastEditTime: 2020-03-06 23:26:27
  */
 import { login } from "../../database";
+import { objectIsNotEmpty } from "../../utils/utils"
 
 export default angular
   .module('login.controller', [])
-  .controller('LoginController', ['$scope', function ($scope) {
-    $scope.wrong = [false, false];
+  .controller('LoginController', ['$scope', '$state', function ($scope, $state) {
+    $scope.wrong = {
+      username: false,
+      password: false
+    };
 
     $scope.background = Math.ceil(Math.random() * 3);
     
     $scope.login = () => {
       if ($scope.username === login.username && $scope.password === login.password) {
-        console.log('登录成功');
-      } else if ($scope.username || $scope.password) {
-        $scope.wrong[0] = true;
-        $scope.wrong[1] = true;
+        $state.go('welcome');
+      } else if (objectIsNotEmpty($scope.username)) {
+        $scope.wrong['username'] = true;
+        if (objectIsNotEmpty($scope.password)) {
+          $scope.wrong['password'] = true;
+        }
       }
+    };
+
+    $scope.hideError = () => {
+      $scope.wrong = {
+        username: false,
+        password: false
+      };
     };
   }]);

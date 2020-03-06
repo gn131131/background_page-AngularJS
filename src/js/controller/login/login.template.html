@@ -4,17 +4,17 @@
  * @Autor: Pumpking
  * @Date: 2020-03-04 14:42:02
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-06 13:35:40
+ * @LastEditTime: 2020-03-06 23:25:14
  -->
 <div class="login-container">
   <h1 class="login-title">AngularJS后台管理系统</h1>
-  <form class="login-form">
-    <input type="text" name="username" class="login-username" ng-model="username" placeholder="Username">
-    <input type="password" name="password" class="login-password" ng-model="password" placeholder="Password">
+  <form class="login-form" name="loginForm">
+    <input type="text" name="username" class="login-username" ng-model="username" ng-change="hideError()" placeholder="Username">
+    <input type="password" name="password" class="login-password" ng-model="password" ng-change="hideError()" placeholder="Password">
     <button type="submit" class="login-submit" ng-click="login()">登录</button>
 
-    <div class="login-error login-error-username" ng-show="wrong[0] && username"><span>+</span></div>
-    <div class="login-error login-error-password" ng-show="wrong[1] && password"><span>+</span></div>
+    <div class="login-error login-error-username" ng-show="wrong['username'] && username"><span>+</span></div>
+    <div class="login-error login-error-password" ng-show="wrong['password'] && password"><span>+</span></div>
   </form>
   <div class="login-background" ng-class="{'login-background-1': background === 1, 'login-background-2': background === 2, 'login-background-3': background === 3}"></div>
 </div>
