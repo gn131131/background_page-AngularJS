@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-02-11 16:13:25
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-04 15:59:19
+ * @LastEditTime: 2020-03-06 14:10:48
  */
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
@@ -17,6 +17,7 @@ module.exports = {
     filename: "[name].bundle.js",
     path: path.resolve(__dirname, "dist"),
     chunkFilename: '[id].build.js?[chunkhash]',
+    publicPath: '/'
   },
   module: {
     rules: [{
