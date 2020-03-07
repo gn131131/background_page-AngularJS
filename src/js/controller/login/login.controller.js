@@ -12,20 +12,22 @@ import { objectIsNotEmpty } from "../../utils/utils"
 export default angular
   .module('login.controller', [])
   .controller('LoginController', ['$scope', '$state', function ($scope, $state) {
-    $scope.wrong = {
+    const vm = this;
+
+    vm.wrong = {
       username: false,
       password: false
     };
 
-    $scope.background = Math.ceil(Math.random() * 3);
+    vm.background = Math.ceil(Math.random() * 3);
     
-    $scope.login = () => {
-      if ($scope.username === login.username && $scope.password === login.password) {
+    vm.login = () => {
+      if (vm.username === login.username && vm.password === login.password) {
         $state.go('welcome');
-      } else if (objectIsNotEmpty($scope.username)) {
-        $scope.wrong['username'] = true;
-        if (objectIsNotEmpty($scope.password)) {
-          $scope.wrong['password'] = true;
+      } else if (objectIsNotEmpty(vm.username)) {
+        vm.wrong['username'] = true;
+        if (objectIsNotEmpty(vm.password)) {
+          vm.wrong['password'] = true;
         }
       }
     };
