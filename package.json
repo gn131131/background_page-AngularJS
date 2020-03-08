@@ -8,6 +8,7 @@
   "author": "Pumpking <gn131131@sina.com>",
   "license": "MIT",
   "scripts": {
+    "server": "node server.js",
     "deploy": "gh-pages -d dist",
     "analyse": "webpack --config webpack.analyse.js",
     "build": "webpack --config webpack.prod.js",
