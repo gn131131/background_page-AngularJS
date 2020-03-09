@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-02-11 16:13:25
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-09 22:13:26
+ * @LastEditTime: 2020-03-09 22:39:24
  */
 const path = require("path");
 const webpack = require("webpack");
@@ -56,16 +56,16 @@ module.exports = {
         use: {
           loader: 'file-loader',
           options: {
-            name: '/image/[name].[ext]?[hash]'
+            name: 'assets/images/[name].[ext]?[hash]'
           }
         }
       },
       {
-        test: /\.woff2?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        test: /\.(woff|woff2)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         use: {
           loader: 'file-loader',
           options: {
-            name: '/font/[name].[ext]?[hash]'
+            name: 'assets/fonts/[name].[ext]?[hash]'
           }
         }
       },
@@ -74,7 +74,7 @@ module.exports = {
         use: {
           loader: 'file-loader',
           options: {
-            name: '/font/[name].[ext]?[hash]'
+            name: 'assets/fonts/[name].[ext]?[hash]'
           }
         }
       }
@@ -84,12 +84,7 @@ module.exports = {
     extensions: ['*', '.js']
   },
   plugins: [
-    new ExtractTextPlugin({ filename: '/style/[name].css', allChunks: true }),
-    new webpack.ProvidePlugin({
-      $: "jquery",
-      jQuery: "jquery",
-      "window.jQuery": "jquery"
-    }),
+    new ExtractTextPlugin({ filename: 'assets/styles/[name].css', allChunks: true }),
     new HtmlWebpackPlugin({
       filename: "index.html",
       template: "./index.html",

@@ -1249,11 +1249,11 @@ textarea {
 	animation-name: flipInY;
 }@font-face {
 	font-family: 'Simple-Line-Icons';
-	src:url(//font/Simple-Line-Icons.eot?f19a7f6c7a0b54b748277c40d7cf8882);
-	src:url(//font/Simple-Line-Icons.eot?f19a7f6c7a0b54b748277c40d7cf8882?#iefix) format('embedded-opentype'),
-		url(//font/Simple-Line-Icons.woff?ff94ad94c3a9d04bd2f80cb3c87dcccb) format('woff'),
-		url(//font/Simple-Line-Icons.ttf?596814caa4fbaecbf5014bcfe8e363fb) format('truetype'),
-		url(//font/Simple-Line-Icons.svg?c9c9b5ebc6395eeb83072bf18e3818aa#Simple-Line-Icons) format('svg');
+	src:url(/assets/fonts/Simple-Line-Icons.eot?f19a7f6c7a0b54b748277c40d7cf8882);
+	src:url(/assets/fonts/Simple-Line-Icons.eot?f19a7f6c7a0b54b748277c40d7cf8882?#iefix) format('embedded-opentype'),
+		url(/assets/fonts/Simple-Line-Icons.woff?ff94ad94c3a9d04bd2f80cb3c87dcccb) format('woff'),
+		url(/assets/fonts/Simple-Line-Icons.ttf?596814caa4fbaecbf5014bcfe8e363fb) format('truetype'),
+		url(/assets/fonts/Simple-Line-Icons.svg?c9c9b5ebc6395eeb83072bf18e3818aa#Simple-Line-Icons) format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -1776,19 +1776,19 @@ you can use the generic selector below, but it's slower:
   font-family: 'Source Sans Pro';
   font-style: normal;
   font-weight: 300;
-  src: local('Source Sans Pro Light'), local('SourceSansPro-Light'), url(//font/sourcesanspro-light.woff?7951903bff82a82e7cde0396dfc9d80c) format('woff');
+  src: local('Source Sans Pro Light'), local('SourceSansPro-Light'), url(/assets/fonts/sourcesanspro-light.woff?7951903bff82a82e7cde0396dfc9d80c) format('woff');
 }
 @font-face {
   font-family: 'Source Sans Pro';
   font-style: normal;
   font-weight: 400;
-  src: local('Source Sans Pro'), local('SourceSansPro-Regular'), url(//font/sourcesanspro.woff?c4f39c8cef7f1746da98c25e82b76f29) format('woff');
+  src: local('Source Sans Pro'), local('SourceSansPro-Regular'), url(/assets/fonts/sourcesanspro.woff?c4f39c8cef7f1746da98c25e82b76f29) format('woff');
 }
 @font-face {
   font-family: 'Source Sans Pro';
   font-style: normal;
   font-weight: 700;
-  src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(//font/sourcesanspro-bold.woff?1146f3f229f5a3d3c711f0922ea2eb87) format('woff');
+  src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(/assets/fonts/sourcesanspro-bold.woff?1146f3f229f5a3d3c711f0922ea2eb87) format('woff');
 }/* 
 
 */

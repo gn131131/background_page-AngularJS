@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-03-08 21:45:26
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-09 18:28:16
+ * @LastEditTime: 2020-03-09 22:39:01
  */
 const appCtrl = ['$scope', '$window',
   function ($scope, $window) {
