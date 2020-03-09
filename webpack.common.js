@@ -4,14 +4,16 @@
  * @Autor: Pumpking
  * @Date: 2020-02-11 16:13:25
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-06 16:55:21
+ * @LastEditTime: 2020-03-09 19:41:02
  */
 const path = require("path");
+const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: {
-    app: "./src/index.js"
+    app: "./src/index.js",
+    bootstrap: "bootstrap-loader"
   },
   output: {
     filename: "[name].bundle.js",
@@ -60,6 +62,11 @@ module.exports = {
     ]
   },
   plugins: [
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery",
+      angular: "angular"
+    }),
     new HtmlWebpackPlugin({
       filename: "index.html",
       template: "./index.html",

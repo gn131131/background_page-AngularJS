@@ -1,5 +1,4 @@
-@import "./assets/style/color.css";
-@import "./assets/style/background.css";
+@import "./assets/style/animate.css";
+@import "./assets/style/simple-line-icons.css";
 @import "./assets/style/font.css";
-
-@import "./assets/style/login.css";
+@import "./assets/style/app.css";
