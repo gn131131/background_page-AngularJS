@@ -4,10 +4,10 @@
  * @Autor: Pumpking
  * @Date: 2020-02-11 16:13:24
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-08 18:17:57
+ * @LastEditTime: 2020-03-08 21:34:05
  -->
 <!DOCTYPE html>
-<html>
+<html lang="zh" ng-app="app">
 
 <head>
   <base href="/">
@@ -21,10 +21,10 @@
   <meta name="keywords" content="angular" />
   <meta name="author" content="Pumpking" />
   <title>AngularJS</title>
-<link rel="shortcut icon" href="/favicon.ico"></head>
+<link rel="shortcut icon" href="/favicon.ico"><link href="/manifest.app.css?ed095f3af5edb7f70be0" rel="stylesheet"><link href="/vendors.app.css?ed095f3af5edb7f70be0" rel="stylesheet"><link href="/app.css?ed095f3af5edb7f70be0" rel="stylesheet"></head>
 
-<body ng-app="app">
-  <ui-view></ui-view>
-<script type="text/javascript" src="/manifest.app.bundle.js?f36576b24f94725d9403"></script><script type="text/javascript" src="/8.build.js?91a5ea2d1d45e6308196&f36576b24f94725d9403"></script><script type="text/javascript" src="/6.build.js?63ca6a076f53726b8302&f36576b24f94725d9403"></script></body>
+<body ng-controller="AppCtrl">
+  <div class="app" id="app" ng-class="{'app-header-fixed':app.settings.headerFixed, 'app-aside-fixed':app.settings.asideFixed, 'app-aside-folded':app.settings.asideFolded, 'app-aside-dock':app.settings.asideDock, 'container':app.settings.container}" ui-view></div>
+<script type="text/javascript" src="/manifest.app.bundle.js?ed095f3af5edb7f70be0"></script><script type="text/javascript" src="/8.build.js?1024d489b533d01d32af&ed095f3af5edb7f70be0"></script><script type="text/javascript" src="/6.build.js?acc6a0f910b866c3486f&ed095f3af5edb7f70be0"></script></body>
 
 </html>

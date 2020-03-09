@@ -4,9 +4,11 @@
  * @Autor: Pumpking
  * @Date: 2020-02-11 16:13:25
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-09 18:09:47
+ * @LastEditTime: 2020-03-09 21:28:11
  */
 "use strict";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.min.js';
 
 import "./vendor/flexble/base.css";
 import "./vendor/flexble/flexible";

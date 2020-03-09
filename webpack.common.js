@@ -4,16 +4,16 @@
  * @Autor: Pumpking
  * @Date: 2020-02-11 16:13:25
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-09 19:41:02
+ * @LastEditTime: 2020-03-09 21:56:37
  */
 const path = require("path");
 const webpack = require("webpack");
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: {
-    app: "./src/index.js",
-    bootstrap: "bootstrap-loader"
+    app: "./src/index.js"
   },
   output: {
     filename: "[name].bundle.js",
@@ -24,25 +24,17 @@ module.exports = {
   module: {
     rules: [{
         test: /\.css$/,
-        use: ["style-loader", "css-loader"]
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: 'css-loader'
+        })
       },
       {
-        test: /\.(png|svg|jpg|gif)$/,
-        use: [{
-          loader: "file-loader",
-          options: {
-            outputPath: 'images/'
-          }
-        }]
-      },
-      {
-        test: /\.(woff|woff2|eot|ttf|otf)$/,
-        use: [{
-          loader: "file-loader",
-          options: {
-            outputPath: 'fonts/'
-          }
-        }]
+        test: /\.scss$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: ['css-loader', 'sass-loader']
+        })
       },
       {
         test: /\.js$/,
@@ -58,14 +50,34 @@ module.exports = {
         test: /\.html$/,
         loader: 'raw-loader',
         exclude: /node_modules/
+      },
+      {
+        test: /\.(png|jpe?g|ico|bmp|gif)$/,
+        loader: 'file-loader',
+        options: {
+          limit: 10000,
+          name: '/img/[name].[ext]?[hash]'
+        }
+      },
+      {
+        test: /\.woff2?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        use: 'url-loader',
+      },
+      {
+        test: /\.(ttf|eot|svg)(\?[\s\S]+)?$/,
+        use: 'file-loader',
       }
     ]
   },
+  resolve: {
+    extensions: ['*', '.js']
+  },
   plugins: [
+    new ExtractTextPlugin({ filename: '[name].css', allChunks: true }),
     new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery",
-      angular: "angular"
+      "window.jQuery": "jquery"
     }),
     new HtmlWebpackPlugin({
       filename: "index.html",
