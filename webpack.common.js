@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-02-11 16:13:25
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-09 21:56:37
+ * @LastEditTime: 2020-03-09 22:13:26
  */
 const path = require("path");
 const webpack = require("webpack");
@@ -53,19 +53,30 @@ module.exports = {
       },
       {
         test: /\.(png|jpe?g|ico|bmp|gif)$/,
-        loader: 'file-loader',
-        options: {
-          limit: 10000,
-          name: '/img/[name].[ext]?[hash]'
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '/image/[name].[ext]?[hash]'
+          }
         }
       },
       {
         test: /\.woff2?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        use: 'url-loader',
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '/font/[name].[ext]?[hash]'
+          }
+        }
       },
       {
         test: /\.(ttf|eot|svg)(\?[\s\S]+)?$/,
-        use: 'file-loader',
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '/font/[name].[ext]?[hash]'
+          }
+        }
       }
     ]
   },
@@ -73,7 +84,7 @@ module.exports = {
     extensions: ['*', '.js']
   },
   plugins: [
-    new ExtractTextPlugin({ filename: '[name].css', allChunks: true }),
+    new ExtractTextPlugin({ filename: '/style/[name].css', allChunks: true }),
     new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery",
