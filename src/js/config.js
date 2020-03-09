@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-03-03 19:50:27
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-06 13:58:08
+ * @LastEditTime: 2020-03-08 22:19:51
  */
 const config = ['$locationProvider', ($locationProvider) => {
   $locationProvider.html5Mode(true);

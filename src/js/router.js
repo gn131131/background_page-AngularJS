@@ -27,23 +27,23 @@ const router = ['$urlRouterProvider', '$stateProvider', ($urlRouterProvider, $st
   $stateProvider
     .state('login', {
       url: '/login',
-      template: require('./controller/login/login.template.html').default,
+      template: require('./controllers/login/login.template.html').default,
       controller: 'LoginController',
       controllerAs: 'vm',
       resolve: {
         loadLoginController: ($ocLazyLoad) => {
-          return ocLazyLoadFn($ocLazyLoad, ['./controller/login/login']);
+          return ocLazyLoadFn($ocLazyLoad, ['./controllers/login/login']);
         }
       }
     })
     .state('welcome', {
       url: '/welcome',
-      template: require('./controller/welcome/welcome.template.html').default,
+      template: require('./controllers/welcome/welcome.template.html').default,
       controller: 'WelcomeController',
       controllerAs: 'vm',
       resolve: {
         loadWelcomeController: ($ocLazyLoad) => {
-          return ocLazyLoadFn($ocLazyLoad, ['./controller/welcome/welcome']);
+          return ocLazyLoadFn($ocLazyLoad, ['./controllers/welcome/welcome']);
         }
       }
     })
