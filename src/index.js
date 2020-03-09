@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-02-11 16:13:25
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-09 13:08:10
+ * @LastEditTime: 2020-03-09 18:09:47
  */
 "use strict";
 
@@ -19,4 +19,17 @@ import oclazyload from "oclazyload";
 import config from "./js/config";
 import router from "./js/router";
 
-angular.module('app', [uirouter, oclazyload]).config(config).config(router);
+import appCtrl from "./js/controllers/app.controller";
+
+// 'ngAnimate',
+//     'ngCookies',
+//     'ngResource',
+//     'ngSanitize',
+//     'ngTouch',
+//     'ngStorage',
+//     'ui.bootstrap',
+//     'ui.load',
+//     'ui.jq',
+//     'ui.validate',
+
+angular.module('app', [uirouter, oclazyload]).config(config).config(router).controller('AppCtrl', appCtrl);

@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-03-04 14:41:52
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-06 23:26:27
+ * @LastEditTime: 2020-03-09 18:26:11
  */
 import { login } from "../../database";
 import { objectIsNotEmpty } from "../../utils/utils"
@@ -12,6 +12,7 @@ import { objectIsNotEmpty } from "../../utils/utils"
 export default angular
   .module('login.controller', [])
   .controller('LoginController', ['$scope', '$state', function ($scope, $state) {
+    console.log($scope.app)
     const vm = this;
 
     vm.wrong = {
