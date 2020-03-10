@@ -4,10 +4,10 @@
  * @Autor: Pumpking
  * @Date: 2020-03-08 21:45:26
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-10 17:43:56
+ * @LastEditTime: 2020-03-10 19:40:17
  */
-const appCtrl = ['$scope', '$window',
-  function ($scope, $window) {
+const appCtrl = ['$scope', '$window', '$templateCache',
+  function ($scope, $window, $templateCache) {
     // add 'ie' classes to html
     var isIE = !!navigator.userAgent.match(/MSIE/i);
     isIE && angular.element($window.document.body).addClass('ie');

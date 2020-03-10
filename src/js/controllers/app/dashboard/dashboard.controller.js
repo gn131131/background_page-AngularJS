@@ -4,11 +4,12 @@
  * @Autor: Pumpking
  * @Date: 2020-03-10 18:09:48
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-10 18:12:32
+ * @LastEditTime: 2020-03-10 19:58:29
  */
 export default angular
   .module('dashboard.controller', [])
-  .controller('DashboardController', ['$scope', function($scope) {
+  .controller('FlotChartDemoCtrl', ['$scope', '$templateCache', function($scope, $templateCache) {
+
     $scope.d = [ [1,6.5],[2,6.5],[3,7],[4,8],[5,7.5],[6,7],[7,6.8],[8,7],[9,7.2],[10,7],[11,6.8],[12,7] ];
 
     $scope.d0_1 = [ [0,7],[1,6.5],[2,12.5],[3,7],[4,9],[5,6],[6,11],[7,6.5],[8,8],[9,7] ];
@@ -63,4 +64,23 @@ export default angular
     }
 
     $scope.d4 = $scope.getRandomData();
-  }]);
+  }])
+  .controller('TypeaheadDemoCtrl', ['$scope', '$http', function($scope, $http) {
+    $scope.selected = undefined;
+    $scope.states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Dakota', 'North Carolina', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
+    // Any function returning a promise object can be used to load values asynchronously
+    $scope.getLocation = function(val) {
+      return $http.get('http://maps.googleapis.com/maps/api/geocode/json', {
+        params: {
+          address: val,
+          sensor: false
+        }
+      }).then(function(res){
+        var addresses = [];
+        angular.forEach(res.data.results, function(item){
+          addresses.push(item.formatted_address);
+        });
+        return addresses;
+      });
+    };
+  }])

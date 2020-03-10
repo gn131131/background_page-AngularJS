@@ -33,13 +33,14 @@
         <ul class="nav navbar-nav hidden-sm">
           <li class="dropdown pos-stc" dropdown>
             <a href class="dropdown-toggle" dropdown-toggle>
-              <span>Mega</span> 
+              <span>Mega</span>
               <span class="caret"></span>
             </a>
             <div class="dropdown-menu wrapper w-full bg-white">
               <div class="row">
                 <div class="col-sm-4">
-                  <div class="m-l-xs m-t-xs m-b-xs font-bold">Pages <span class="badge badge-sm bg-success">10</span></div>
+                  <div class="m-l-xs m-t-xs m-b-xs font-bold">Pages <span class="badge badge-sm bg-success">10</span>
+                  </div>
                   <div class="row">
                     <div class="col-xs-6">
                       <ul class="list-unstyled l-h-2x">
@@ -76,7 +77,8 @@
                   </div>
                 </div>
                 <div class="col-sm-4 b-l b-light">
-                  <div class="m-l-xs m-t-xs m-b-xs font-bold">UI Kits <span class="label label-sm bg-primary">12</span></div>
+                  <div class="m-l-xs m-t-xs m-b-xs font-bold">UI Kits <span class="label label-sm bg-primary">12</span>
+                  </div>
                   <div class="row">
                     <div class="col-xs-6">
                       <ul class="list-unstyled l-h-2x">
@@ -84,7 +86,8 @@
                           <a href><i class="fa fa-fw fa-angle-right text-muted m-r-xs"></i>Buttons</a>
                         </li>
                         <li>
-                          <a href><i class="fa fa-fw fa-angle-right text-muted m-r-xs"></i>Icons <span class="badge badge-sm bg-warning">1000+</span></a>
+                          <a href><i class="fa fa-fw fa-angle-right text-muted m-r-xs"></i>Icons <span
+                              class="badge badge-sm bg-warning">1000+</span></a>
                         </li>
                         <li>
                           <a href><i class="fa fa-fw fa-angle-right text-muted m-r-xs"></i>Grid</a>
@@ -161,10 +164,13 @@
         <!-- / link and dropdown -->
 
         <!-- search form -->
-        <form class="navbar-form navbar-form-sm navbar-left shift" ui-shift="prependTo" target=".navbar-collapse" role="search" ng-controller="TypeaheadDemoCtrl">
+        <form class="navbar-form navbar-form-sm navbar-left shift" ui-shift="prependTo" target=".navbar-collapse"
+          role="search" ng-controller="TypeaheadDemoCtrl">
           <div class="form-group">
             <div class="input-group">
-              <input type="text" ng-model="selected" typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control input-sm bg-light no-border rounded padder" placeholder="Search projects...">
+              <input type="text" ng-model="selected"
+                typeahead="state for state in states | filter:$viewValue | limitTo:8"
+                class="form-control input-sm bg-light no-border rounded padder" placeholder="Search projects...">
               <span class="input-group-btn">
                 <button type="submit" class="btn btn-sm bg-light rounded"><i class="fa fa-search"></i></button>
               </span>

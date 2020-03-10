@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-02-11 16:13:25
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-10 18:19:57
+ * @LastEditTime: 2020-03-10 18:51:20
  */
 const path = require("path");
 const webpack = require("webpack");
@@ -96,21 +96,24 @@ module.exports = {
       template: "./404.html",
       hash: true
     }),
-    new HtmlWebpackPlugin({
-      filename: "header.html",
-      template: "./src/templates/header.html",
-      hash: true
-    }),
-    new HtmlWebpackPlugin({
-      filename: "aside.html",
-      template: "./src/templates/aside.html",
-      hash: true
-    }),
-    new HtmlWebpackPlugin({
-      filename: "settings.html",
-      template: "./src/templates/settings.html",
-      hash: true
-    })
+    // new HtmlWebpackPlugin({
+    //   filename: "templates/header.html",
+    //   template: "./src/templates/header.html",
+    //   hash: true,
+    //   inject: false
+    // }),
+    // new HtmlWebpackPlugin({
+    //   filename: "templates/aside.html",
+    //   template: "./src/templates/aside.html",
+    //   hash: true,
+    //   inject: false
+    // }),
+    // new HtmlWebpackPlugin({
+    //   filename: "templates/settings.html",
+    //   template: "./src/templates/settings.html",
+    //   hash: true,
+    //   inject: false
+    // })
   ],
   optimization: {
     splitChunks: {

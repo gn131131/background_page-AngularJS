@@ -17,6 +17,7 @@ import "./style.css";
 import uirouter from "angular-ui-router";
 import oclazyload from "oclazyload";
 
+import run from "./js/run";
 import config from "./js/config";
 import router from "./js/router";
 
@@ -33,4 +34,4 @@ import appCtrl from "./js/controllers/app/app.controller";
 //     'ui.jq',
 //     'ui.validate',
 
-angular.module('app', [uirouter, oclazyload]).config(config).config(router).controller('AppCtrl', appCtrl);
+angular.module('app', [uirouter, oclazyload]).run(run).config(config).config(router).controller('AppCtrl', appCtrl);
