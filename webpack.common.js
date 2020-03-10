@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-02-11 16:13:25
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-09 22:39:24
+ * @LastEditTime: 2020-03-10 18:19:57
  */
 const path = require("path");
 const webpack = require("webpack");
@@ -94,6 +94,21 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: "404.html",
       template: "./404.html",
+      hash: true
+    }),
+    new HtmlWebpackPlugin({
+      filename: "header.html",
+      template: "./src/templates/header.html",
+      hash: true
+    }),
+    new HtmlWebpackPlugin({
+      filename: "aside.html",
+      template: "./src/templates/aside.html",
+      hash: true
+    }),
+    new HtmlWebpackPlugin({
+      filename: "settings.html",
+      template: "./src/templates/settings.html",
       hash: true
     })
   ],

@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-03-08 21:45:26
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-09 22:39:01
+ * @LastEditTime: 2020-03-10 17:43:56
  */
 const appCtrl = ['$scope', '$window',
   function ($scope, $window) {
@@ -15,7 +15,8 @@ const appCtrl = ['$scope', '$window',
 
     // config
     $scope.app = {
-      name: 'AngularJS后台管理',
+      name: '后台管理系统',
+      subName: 'Web app framework base on Bootstrap and AngularJS',
       version: '1.3.3',
       // for chart colors
       color: {

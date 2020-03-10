@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-03-03 18:23:06
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-05 13:43:53
+ * @LastEditTime: 2020-03-10 18:14:37
  */
 const ocLazyLoadFn = ($ocLazyLoad, urls) => {
   let arr = [];
@@ -22,28 +22,35 @@ const ocLazyLoadFn = ($ocLazyLoad, urls) => {
 }
 
 const router = ['$urlRouterProvider', '$stateProvider', ($urlRouterProvider, $stateProvider) => {
-  $urlRouterProvider.otherwise('/login');
+  $urlRouterProvider.otherwise('/access/login');
 
   $stateProvider
-    .state('login', {
+    .state('app', {
+      abstract: true,
+      url: '/app',
+      template: require('./controllers/app/app.template.html').default
+    })
+    .state('app.dashboard', {
+      url: '/dashboard',
+      template: require('./controllers/app/dashboard/dashboard.template.html').default,
+      resolve: {
+        loadLoginController: ($ocLazyLoad) => {
+          return ocLazyLoadFn($ocLazyLoad, ['./controllers/app/dashboard/dashboard']);
+        }
+      }
+    })
+    .state('access', {
+      url: '/access',
+      template: '<div ui-view class="fade-in-right-big smooth"></div>'
+    })
+    .state('access.login', {
       url: '/login',
-      template: require('./controllers/login/login.template.html').default,
+      template: require('./controllers/access/login/login.template.html').default,
       controller: 'LoginController',
       controllerAs: 'vm',
       resolve: {
         loadLoginController: ($ocLazyLoad) => {
-          return ocLazyLoadFn($ocLazyLoad, ['./controllers/login/login']);
-        }
-      }
-    })
-    .state('welcome', {
-      url: '/welcome',
-      template: require('./controllers/welcome/welcome.template.html').default,
-      controller: 'WelcomeController',
-      controllerAs: 'vm',
-      resolve: {
-        loadWelcomeController: ($ocLazyLoad) => {
-          return ocLazyLoadFn($ocLazyLoad, ['./controllers/welcome/welcome']);
+          return ocLazyLoadFn($ocLazyLoad, ['./controllers/access/login/login']);
         }
       }
     })

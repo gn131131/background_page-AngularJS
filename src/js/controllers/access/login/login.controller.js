@@ -4,9 +4,9 @@
  * @Autor: Pumpking
  * @Date: 2020-03-04 14:41:52
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-10 13:21:20
+ * @LastEditTime: 2020-03-10 18:04:51
  */
-import { login } from "../../database";
+import { login } from "../../../database";
 
 export default angular
   .module('login.controller', [])
@@ -15,16 +15,21 @@ export default angular
 
     vm.login = () => {
       if (vm.username === login.username && vm.password === login.password) {
-        $state.go('welcome');
+        $state.go('app.dashboard');
       } else {
         if (vm.username !== login.username) {
           vm.authError = login.authError.username;
         } else if (vm.password !== login.password) {
           vm.authError = login.authError.password;
         }
-        $timeout(() => {
-          vm.authError = '';
-        }, 2000);
+
+        if (!vm.timeout) {
+          vm.timeout = true;
+          $timeout(() => {
+            vm.authError = '';
+            vm.timeout = false;
+          }, 2000);
+        }
       }
     };
     

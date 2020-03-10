@@ -4,9 +4,9 @@
  * @Autor: Pumpking
  * @Date: 2020-03-04 17:18:14
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-05 16:08:56
+ * @LastEditTime: 2020-03-10 18:10:36
  */
-import controller from "./welcome.controller"
+import controller from "./dashboard.controller"
 
 export default angular
-  .module('welcome', [controller.name]);
+  .module('dashboard', [controller.name]);

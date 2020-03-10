@@ -20,7 +20,7 @@ import oclazyload from "oclazyload";
 import config from "./js/config";
 import router from "./js/router";
 
-import appCtrl from "./js/controllers/app.controller";
+import appCtrl from "./js/controllers/app/app.controller";
 
 // 'ngAnimate',
 //     'ngCookies',
