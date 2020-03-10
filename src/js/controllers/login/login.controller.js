@@ -4,39 +4,28 @@
  * @Autor: Pumpking
  * @Date: 2020-03-04 14:41:52
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-09 18:26:11
+ * @LastEditTime: 2020-03-10 13:21:20
  */
 import { login } from "../../database";
-import { objectIsNotEmpty } from "../../utils/utils"
 
 export default angular
   .module('login.controller', [])
-  .controller('LoginController', ['$scope', '$state', function ($scope, $state) {
-    console.log($scope.app)
-    const vm = this;
+  .controller('LoginController', ['$scope', '$state', '$timeout', function ($scope, $state, $timeout) {
+    let vm = this;
 
-    vm.wrong = {
-      username: false,
-      password: false
-    };
-
-    vm.background = Math.ceil(Math.random() * 3);
-    
     vm.login = () => {
       if (vm.username === login.username && vm.password === login.password) {
         $state.go('welcome');
-      } else if (objectIsNotEmpty(vm.username)) {
-        vm.wrong['username'] = true;
-        if (objectIsNotEmpty(vm.password)) {
-          vm.wrong['password'] = true;
+      } else {
+        if (vm.username !== login.username) {
+          vm.authError = login.authError.username;
+        } else if (vm.password !== login.password) {
+          vm.authError = login.authError.password;
         }
+        $timeout(() => {
+          vm.authError = '';
+        }, 2000);
       }
     };
-
-    $scope.hideError = () => {
-      $scope.wrong = {
-        username: false,
-        password: false
-      };
-    };
+    
   }]);

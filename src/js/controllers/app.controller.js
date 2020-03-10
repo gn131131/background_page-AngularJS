@@ -15,7 +15,7 @@ const appCtrl = ['$scope', '$window',
 
     // config
     $scope.app = {
-      name: 'Angulr',
+      name: 'AngularJS后台管理',
       version: '1.3.3',
       // for chart colors
       color: {

@@ -8,7 +8,11 @@
  */
 const login = {
   username: 'admin',
-  password: '123456'
+  password: '123456',
+  authError: {
+    username: '用户名错误',
+    password: '密码错误'
+  }
 }
 
 export { login };

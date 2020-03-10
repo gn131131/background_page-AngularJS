@@ -4,44 +4,27 @@
  * @Autor: Pumpking
  * @Date: 2020-03-04 14:42:02
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-09 18:25:41
+ * @LastEditTime: 2020-03-10 13:24:43
  -->
-<!-- <div class="login-container">
-  <h1 class="login-title">AngularJS后台管理系统</h1>
-  <form class="login-form" name="loginForm">
-    <input type="text" name="username" class="login-username" ng-model="vm.username" ng-change="vm.hideError()" placeholder="Username">
-    <input type="password" name="password" class="login-password" ng-model="vm.password" ng-change="vm.hideError()" placeholder="Password">
-    <button type="submit" class="login-submit" ng-click="vm.login()">登录</button>
-
-    <div class="login-error login-error-username" ng-show="vm.wrong['username'] && vm.username"><span>+</span></div>
-    <div class="login-error login-error-password" ng-show="vm.wrong['password'] && vm.password"><span>+</span></div>
-  </form>
-  <div class="login-background" ng-class="{'login-background-1': vm.background === 1, 'login-background-2': vm.background === 2, 'login-background-3': vm.background === 3}"></div>
-</div> -->
 <div class="container w-xxl w-auto-xs" ng-init="app.settings.container = false;">
+  <div class="line line-dashed"></div>
   <a href class="navbar-brand block m-t">{{app.name}}</a>
+  <div class="line line-dashed"></div>
   <div class="m-b-lg">
-    <div class="wrapper text-center">
-      <strong>Sign in to get in touch</strong>
-    </div>
     <form name="form" class="form-validation">
-      <div class="text-danger wrapper text-center" ng-show="authError">
-          {{authError}}
+      <div class="text-danger wrapper text-center" ng-if="vm.authError">
+          {{vm.authError}}
       </div>
       <div class="list-group list-group-sm">
         <div class="list-group-item">
-          <input type="email" placeholder="Email" class="form-control no-border" ng-model="user.email" required>
+          <input type="text" placeholder="用户名" class="form-control no-border" ng-model="vm.username" required>
         </div>
         <div class="list-group-item">
-           <input type="password" placeholder="Password" class="form-control no-border" ng-model="user.password" required>
+           <input type="password" placeholder="密码" class="form-control no-border" ng-model="vm.password" required>
         </div>
       </div>
-      <button type="submit" class="btn btn-lg btn-primary btn-block" ng-click="login()" ng-disabled='form.$invalid'>Log in</button>
-      <div class="text-center m-t m-b"><a ui-sref="access.forgotpwd">Forgot password?</a></div>
       <div class="line line-dashed"></div>
-      <p class="text-center"><small>Do not have an account?</small></p>
-      <a ui-sref="access.signup" class="btn btn-lg btn-default btn-block">Create an account</a>
+      <button type="submit" class="btn btn-lg btn-primary btn-block" ng-click="vm.login()" ng-disabled='form.$invalid'>登录</button>
     </form>
   </div>
-  <div class="text-center" ng-include="'tpl/blocks/page_footer.html'"></div>
 </div>
