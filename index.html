@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-02-11 16:13:24
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-08 21:34:05
+ * @LastEditTime: 2020-03-11 18:04:08
  -->
 <!DOCTYPE html>
 <html lang="zh" ng-app="app">
@@ -20,11 +20,18 @@
   <meta name="description" content="AngularJS" />
   <meta name="keywords" content="angular" />
   <meta name="author" content="Pumpking" />
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
   <title>AngularJS</title>
 </head>
 
 <body ng-controller="AppCtrl">
   <div class="app" id="app" ng-class="{'app-header-fixed':app.settings.headerFixed, 'app-aside-fixed':app.settings.asideFixed, 'app-aside-folded':app.settings.asideFolded, 'app-aside-dock':app.settings.asideDock, 'container':app.settings.container}" ui-view></div>
+
+  <script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/angular.js/1.7.8/angular.min.js"></script>
+  <script src="https://cdn.staticfile.org/angular-ui-bootstrap/0.12.0/ui-bootstrap-tpls.min.js"></script>
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </body>
 
 </html>
