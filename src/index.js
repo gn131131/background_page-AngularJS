@@ -13,7 +13,6 @@ import "./vendor/flexble/flexible";
 
 import "./style.css";
 
-import uirouter from "angular-ui-router";
 import oclazyload from "oclazyload";
 
 import run from "./js/run";
@@ -28,9 +27,8 @@ import appCtrl from "./js/controllers/app/app.controller";
 //     'ngSanitize',
 //     'ngTouch',
 //     'ngStorage',
-//     'ui.bootstrap',
 //     'ui.load',
 //     'ui.jq',
 //     'ui.validate',
 
-angular.module('app', [uirouter, oclazyload, 'ui.bootstrap']).run(run).config(config).config(router).controller('AppCtrl', appCtrl);
+angular.module('app', ['ui.router', oclazyload, 'ui.bootstrap']).run(run).config(config).config(router).controller('AppCtrl', appCtrl);
