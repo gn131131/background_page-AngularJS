@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-02-11 16:13:25
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-11 17:04:34
+ * @LastEditTime: 2020-03-11 20:36:02
  */
 "use strict";
 
@@ -19,7 +19,21 @@ import run from "./js/run";
 import config from "./js/config";
 import router from "./js/router";
 
-import appCtrl from "./js/controllers/app/app.controller";
+import AppController from "./js/controllers/app/app.controller";
+
+import uiLoad from "./js/services/ui-load";
+
+import setNgAnimate from "./js/directives/setnganimate";
+import uiButterbar from "./js/directives/ui-butterbar";
+import uiFocus from "./js/directives/ui-focus";
+import uiFullscreen from "./js/directives/ui-fullscreen";
+import uiJq from "./js/directives/ui-jq";
+import uiModule from "./js/directives/ui-module";
+import uiNav from "./js/directives/ui-nav";
+import uiScroll from "./js/directives/ui-scroll";
+import uiShift from "./js/directives/ui-shift";
+import uiToggleClass from "./js/directives/ui-toggleclass";
+import uiValidate from "./js/directives/ui-validate";
 
 // 'ngAnimate',
 //     'ngCookies',
@@ -31,4 +45,20 @@ import appCtrl from "./js/controllers/app/app.controller";
 //     'ui.jq',
 //     'ui.validate',
 
-angular.module('app', ['ui.router', oclazyload, 'ui.bootstrap']).run(run).config(config).config(router).controller('AppCtrl', appCtrl);
+angular.module('app', ['ui.router', oclazyload, 'ui.bootstrap'])
+  .run(run)
+  .config(config)
+  .config(router)
+  .controller('AppController', AppController)
+  .service('uiLoad', uiLoad)
+  .directive('setNgAnimate', setNgAnimate)
+  .directive('uiButterbar', uiButterbar)
+  .directive('uiFocus', uiFocus)
+  .directive('uiFullscreen', uiFullscreen)
+  .directive('uiJq', uiJq)
+  .directive('uiModule', uiModule)
+  .directive('uiNav', uiNav)
+  .directive('uiScroll', uiScroll)
+  .directive('uiShift', uiShift)
+  .directive('uiToggleClass', uiToggleClass)
+  .directive('uiValidate', uiValidate)
