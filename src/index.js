@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-02-11 16:13:25
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-11 20:36:02
+ * @LastEditTime: 2020-03-12 14:43:10
  */
 "use strict";
 
@@ -22,6 +22,8 @@ import router from "./js/router";
 import AppController from "./js/controllers/app/app.controller";
 
 import uiLoad from "./js/services/ui-load";
+
+import jqConfig from "./js/constants/jqConfig";
 
 import setNgAnimate from "./js/directives/setnganimate";
 import uiButterbar from "./js/directives/ui-butterbar";
@@ -51,10 +53,12 @@ angular.module('app', ['ui.router', oclazyload, 'ui.bootstrap'])
   .config(router)
   .controller('AppController', AppController)
   .service('uiLoad', uiLoad)
+  .constant('JQ_CONFIG', jqConfig)
   .directive('setNgAnimate', setNgAnimate)
   .directive('uiButterbar', uiButterbar)
   .directive('uiFocus', uiFocus)
   .directive('uiFullscreen', uiFullscreen)
+  .value('uiJqConfig', {})
   .directive('uiJq', uiJq)
   .directive('uiModule', uiModule)
   .directive('uiNav', uiNav)

@@ -1,3 +1,11 @@
+/*
+ * @Description: 
+ * @Version: 1.0
+ * @Autor: Pumpking
+ * @Date: 2020-03-11 19:54:18
+ * @LastEditors: Pumpking
+ * @LastEditTime: 2020-03-12 15:01:19
+ */
 'use strict';
 
 /**
@@ -69,7 +77,7 @@ const uiJq = ['uiJqConfig', 'JQ_CONFIG', 'uiLoad', '$timeout', function uiJqInje
         }
 
         if ( JQ_CONFIG[attrs.uiJq] ) {
-          uiLoad.load(JQ_CONFIG[attrs.uiJq]).then(function() {
+          uiLoad.load(JQ_CONFIG[attrs.uiJq]).then(function(e) {
             callPlugin();
             refresh();
           }).catch(function() {

@@ -4,9 +4,9 @@
  * @Autor: Pumpking
  * @Date: 2020-03-04 14:41:52
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-10 18:04:51
+ * @LastEditTime: 2020-03-12 14:21:32
  */
-import { login } from "../../../database";
+import { login } from "../../../constants/database";
 
 export default angular
   .module('login.controller', [])
