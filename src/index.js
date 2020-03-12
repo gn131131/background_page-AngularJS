@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-02-11 16:13:25
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-12 14:43:10
+ * @LastEditTime: 2020-03-12 18:06:26
  */
 "use strict";
 
@@ -37,17 +37,7 @@ import uiShift from "./js/directives/ui-shift";
 import uiToggleClass from "./js/directives/ui-toggleclass";
 import uiValidate from "./js/directives/ui-validate";
 
-// 'ngAnimate',
-//     'ngCookies',
-//     'ngResource',
-//     'ngSanitize',
-//     'ngTouch',
-//     'ngStorage',
-//     'ui.load',
-//     'ui.jq',
-//     'ui.validate',
-
-angular.module('app', ['ui.router', oclazyload, 'ui.bootstrap'])
+angular.module('app', ['ui.router', oclazyload, 'ui.bootstrap', 'ui.calendar'])
   .run(run)
   .config(config)
   .config(router)

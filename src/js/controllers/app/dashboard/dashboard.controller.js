@@ -7,7 +7,7 @@
  * @LastEditTime: 2020-03-10 19:58:29
  */
 export default angular
-  .module('dashboard.controller', [])
+  .module('app.dashboard.controller', [])
   .controller('FlotChartDemoCtrl', ['$scope', '$templateCache', function($scope, $templateCache) {
 
     $scope.d = [ [1,6.5],[2,6.5],[3,7],[4,8],[5,7.5],[6,7],[7,6.8],[8,7],[9,7.2],[10,7],[11,6.8],[12,7] ];

@@ -6,7 +6,7 @@
  * @LastEditors: Pumpking
  * @LastEditTime: 2020-03-04 17:29:10
  */
-import controller from "./login.controller"
+import controller from "./calendar.controller"
 
 export default angular
-  .module('access.login', [controller.name]);
+  .module('app.calendar', [controller.name]);

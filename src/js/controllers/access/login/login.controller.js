@@ -9,7 +9,7 @@
 import { login } from "../../../constants/database";
 
 export default angular
-  .module('login.controller', [])
+  .module('access.login.controller', [])
   .controller('LoginController', ['$scope', '$state', '$timeout', function ($scope, $state, $timeout) {
     let vm = this;
 

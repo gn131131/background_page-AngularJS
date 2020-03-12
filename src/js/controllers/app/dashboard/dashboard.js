@@ -9,4 +9,4 @@
 import controller from "./dashboard.controller";
 
 export default angular
-  .module('dashboard', [controller.name]);
+  .module('app.dashboard', [controller.name]);

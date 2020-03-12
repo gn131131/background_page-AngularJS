@@ -4,12 +4,13 @@
  * @Autor: Pumpking
  * @Date: 2020-03-03 18:23:06
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-10 18:14:37
+ * @LastEditTime: 2020-03-12 17:59:03
  */
 const ocLazyLoadFn = ($ocLazyLoad, urls) => {
   let arr = [];
   urls.map(item => {
     arr.push(new Promise((resolve) => {
+      const reg = '';
       import(`${item}`).then(module => {
         $ocLazyLoad.load({
           name: module.default.name
@@ -25,6 +26,21 @@ const router = ['$urlRouterProvider', '$stateProvider', ($urlRouterProvider, $st
   $urlRouterProvider.otherwise('/access/login');
 
   $stateProvider
+    .state('access', {
+      url: '/access',
+      template: '<div ui-view class="fade-in-right-big smooth"></div>'
+    })
+    .state('access.login', {
+      url: '/login',
+      template: require('./controllers/access/login/login.template.html').default,
+      controller: 'LoginController',
+      controllerAs: 'vm',
+      resolve: {
+        loadLoginController: ($ocLazyLoad) => {
+          return ocLazyLoadFn($ocLazyLoad, ['./controllers/access/login/login']);
+        }
+      }
+    })
     .state('app', {
       abstract: true,
       url: '/app',
@@ -39,18 +55,12 @@ const router = ['$urlRouterProvider', '$stateProvider', ($urlRouterProvider, $st
         }
       }
     })
-    .state('access', {
-      url: '/access',
-      template: '<div ui-view class="fade-in-right-big smooth"></div>'
-    })
-    .state('access.login', {
-      url: '/login',
-      template: require('./controllers/access/login/login.template.html').default,
-      controller: 'LoginController',
-      controllerAs: 'vm',
+    .state('app.calendar', {
+      url: '/calendar',
+      template: require('./controllers/app/calendar/calendar.template.html').default,
       resolve: {
-        loadLoginController: ($ocLazyLoad) => {
-          return ocLazyLoadFn($ocLazyLoad, ['./controllers/access/login/login']);
+        loadCalendarController: ($ocLazyLoad) => {
+          return ocLazyLoadFn($ocLazyLoad, ['./controllers/app/calendar/calendar']);
         }
       }
     })
