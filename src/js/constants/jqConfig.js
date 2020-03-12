@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-03-12 14:16:47
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-12 15:27:29
+ * @LastEditTime: 2020-03-12 15:51:59
  */
 const jqConfig = {
   easyPieChart: ['https://cdn.staticfile.org/easy-pie-chart/2.1.6/jquery.easypiechart.min.js'],
@@ -12,6 +12,12 @@ const jqConfig = {
   plot: ['https://cdn.staticfile.org/flot/0.8.1/jquery.flot.min.js',
     'https://cdn.staticfile.org/flot/0.8.1/jquery.flot.resize.min.js',
     'https://cdn.staticfile.org/flot.tooltip/0.8.3/jquery.flot.tooltip.min.js',
+    'https://cdn.staticfile.org/flot/0.8.3/jquery.flot.threshold.min.js',
+    'https://cdn.staticfile.org/flot/0.8.3/jquery.flot.symbol.min.js',
+    'https://cdn.staticfile.org/flot/0.8.3/jquery.flot.stack.min.js',
+    'https://cdn.staticfile.org/flot/0.8.3/jquery.flot.selection.min.js',
+    'https://cdn.staticfile.org/flot/0.8.3/jquery.flot.navigate.min.js',
+    'https://cdn.staticfile.org/flot/0.8.3/jquery.flot.errorbars.min.js',
     'https://cdn.staticfile.org/flot/0.8.3/jquery.flot.pie.min.js'
   ],
   slimScroll: ['https://cdn.staticfile.org/jQuery-slimScroll/1.3.8/jquery.slimscroll.min.js'],
