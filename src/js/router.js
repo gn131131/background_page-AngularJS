@@ -4,13 +4,12 @@
  * @Autor: Pumpking
  * @Date: 2020-03-03 18:23:06
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-12 17:59:03
+ * @LastEditTime: 2020-03-13 15:43:15
  */
 const ocLazyLoadFn = ($ocLazyLoad, urls) => {
   let arr = [];
   urls.map(item => {
     arr.push(new Promise((resolve) => {
-      const reg = '';
       import(`${item}`).then(module => {
         $ocLazyLoad.load({
           name: module.default.name
@@ -52,15 +51,6 @@ const router = ['$urlRouterProvider', '$stateProvider', ($urlRouterProvider, $st
       resolve: {
         loadLoginController: ($ocLazyLoad) => {
           return ocLazyLoadFn($ocLazyLoad, ['./controllers/app/dashboard/dashboard']);
-        }
-      }
-    })
-    .state('app.calendar', {
-      url: '/calendar',
-      template: require('./controllers/app/calendar/calendar.template.html').default,
-      resolve: {
-        loadCalendarController: ($ocLazyLoad) => {
-          return ocLazyLoadFn($ocLazyLoad, ['./controllers/app/calendar/calendar']);
         }
       }
     })
