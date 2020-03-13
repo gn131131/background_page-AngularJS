@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-03-10 18:09:48
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-10 19:58:29
+ * @LastEditTime: 2020-03-13 16:08:47
  */
 export default angular
   .module('app.dashboard.controller', [])
@@ -42,7 +42,7 @@ export default angular
 
     $scope.getRandomData = function() {
       var data = [],
-      totalPoints = 150;
+      totalPoints = 12;
       if (data.length > 0)
         data = data.slice(1);
       while (data.length < totalPoints) {
@@ -58,29 +58,10 @@ export default angular
       // Zip the generated y values with the x values
       var res = [];
       for (var i = 0; i < data.length; ++i) {
-        res.push([i, data[i]])
+        res.push([i + 1, data[i]])
       }
       return res;
     }
 
     $scope.d4 = $scope.getRandomData();
-  }])
-  .controller('TypeaheadDemoCtrl', ['$scope', '$http', function($scope, $http) {
-    $scope.selected = undefined;
-    $scope.states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Dakota', 'North Carolina', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
-    // Any function returning a promise object can be used to load values asynchronously
-    $scope.getLocation = function(val) {
-      return $http.get('http://maps.googleapis.com/maps/api/geocode/json', {
-        params: {
-          address: val,
-          sensor: false
-        }
-      }).then(function(res){
-        var addresses = [];
-        angular.forEach(res.data.results, function(item){
-          addresses.push(item.formatted_address);
-        });
-        return addresses;
-      });
-    };
   }])

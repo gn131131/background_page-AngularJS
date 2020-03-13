@@ -4,10 +4,10 @@
  * @Autor: Pumpking
  * @Date: 2020-03-12 14:16:47
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-12 15:51:59
+ * @LastEditTime: 2020-03-13 16:31:12
  */
 const jqConfig = {
-  easyPieChart: ['https://cdn.staticfile.org/easy-pie-chart/2.1.6/jquery.easypiechart.min.js'],
+  easyPieChart: ['https://cdn.staticfile.org/easy-pie-chart/1.2.5/jquery.easy-pie-chart.js'],
   sparkline: ['https://cdn.staticfile.org/jquery-sparklines/2.1.2/jquery.sparkline.min.js'],
   plot: ['https://cdn.staticfile.org/flot/0.8.1/jquery.flot.min.js',
     'https://cdn.staticfile.org/flot/0.8.1/jquery.flot.resize.min.js',
