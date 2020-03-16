@@ -1,41 +1,4 @@
-/*
- * @Description: 
- * @Version: 1.0
- * @Autor: Pumpking
- * @Date: 2020-03-06 13:24:30
- * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-06 13:24:31
- */
-const login = {
-  username: 'admin',
-  password: '123456',
-  authError: {
-    username: '用户名错误',
-    password: '密码错误'
-  }
-};
-
-const note = {
-  "notes":[
-    {
-      "content": "AngularJS - HTML enhanced for web apps!",
-      "color": "warning",
-      "date": 1410788931159
-    },
-    {
-      "content": "Meeting",
-      "color": "primary",
-      "date": 1410788631159
-    },
-    {
-      "content": "Keep watching",
-      "color": "success",
-      "date": 1410788731159
-    }
-  ]
-};
-
-const contact = {
+{
   "items":[
     {
       "group" : "Partner",
@@ -181,6 +144,4 @@ const contact = {
       "avatar": "img/a8.jpg"
     }
   ]
-};
-
-export { login, note, contact };
+}

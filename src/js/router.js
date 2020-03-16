@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-03-03 18:23:06
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-13 15:43:15
+ * @LastEditTime: 2020-03-16 14:26:33
  */
 const ocLazyLoadFn = ($ocLazyLoad, urls) => {
   let arr = [];
@@ -51,6 +51,29 @@ const router = ['$urlRouterProvider', '$stateProvider', ($urlRouterProvider, $st
       resolve: {
         loadLoginController: ($ocLazyLoad) => {
           return ocLazyLoadFn($ocLazyLoad, ['./controllers/app/dashboard/dashboard']);
+        }
+      }
+    })
+    .state('apps', {
+      abstract: true,
+      url: '/apps',
+      template: require('./controllers/apps/layout.html').default
+    })
+    .state('apps.note', {
+      url: '/note',
+      template: require('./controllers/apps/note/note.template.html').default,
+      resolve: {
+        loadNoteController: ($ocLazyLoad) => {
+          return ocLazyLoadFn($ocLazyLoad, ['./controllers/apps/note/note']);
+        }
+      }
+    })
+    .state('apps.contact', {
+      url: '/contact',
+      template: require('./controllers/apps/contact/contact.template.html').default,
+      resolve: {
+        loadContactController: ($ocLazyLoad) => {
+          return ocLazyLoadFn($ocLazyLoad, ['./controllers/apps/contact/contact']);
         }
       }
     })
