@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-02-11 16:13:25
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-16 15:11:33
+ * @LastEditTime: 2020-03-16 16:02:11
  */
 "use strict";
 
@@ -21,41 +21,16 @@ import router from "./js/router";
 
 import AppController from "./js/controllers/app/app.controller";
 
-import uiLoad from "./js/services/ui-load";
+import services from "./js/services/services";
 
-import fromNow from "./js/filters/fromNow";
+import filters from "./js/filters/filters";
 
-import jqConfig from "./js/constants/jqConfig";
+import directives from "./js/directives/directives";
 
-import setNgAnimate from "./js/directives/setnganimate";
-import uiButterbar from "./js/directives/ui-butterbar";
-import uiFocus from "./js/directives/ui-focus";
-import uiFullscreen from "./js/directives/ui-fullscreen";
-import uiJq from "./js/directives/ui-jq";
-import uiModule from "./js/directives/ui-module";
-import uiNav from "./js/directives/ui-nav";
-import uiScroll from "./js/directives/ui-scroll";
-import uiShift from "./js/directives/ui-shift";
-import uiToggleClass from "./js/directives/ui-toggleclass";
-import uiValidate from "./js/directives/ui-validate";
+import constants from "./js/constants/constants";
 
-angular.module('app', ['ui.router', oclazyload, 'ui.bootstrap'])
+angular.module('app', ['ui.router', oclazyload, 'ui.bootstrap', services.name, filters.name, directives.name, constants.name])
   .run(run)
   .config(config)
   .config(router)
   .controller('AppController', AppController)
-  .service('uiLoad', uiLoad)
-  .filter('fromNow', fromNow)
-  .constant('JQ_CONFIG', jqConfig)
-  .directive('setNgAnimate', setNgAnimate)
-  .directive('uiButterbar', uiButterbar)
-  .directive('uiFocus', uiFocus)
-  .directive('uiFullscreen', uiFullscreen)
-  .value('uiJqConfig', {})
-  .directive('uiJq', uiJq)
-  .directive('uiModule', uiModule)
-  .directive('uiNav', uiNav)
-  .directive('uiScroll', uiScroll)
-  .directive('uiShift', uiShift)
-  .directive('uiToggleClass', uiToggleClass)
-  .directive('uiValidate', uiValidate)
