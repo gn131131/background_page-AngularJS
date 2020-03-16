@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-02-11 16:13:25
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-16 16:04:40
+ * @LastEditTime: 2020-03-16 17:08:20
  */
 "use strict";
 
@@ -29,7 +29,7 @@ import directives from "./js/directives/directives";
 
 import constants from "./js/constants/constants";
 
-angular.module('app', ['ui.router', oclazyload, 'ui.bootstrap', services.name, filters.name, directives.name, constants.name])
+angular.module('app', ['ui.router', oclazyload, 'ui.bootstrap', 'ngAnimate', 'ngCookies', 'ngResource', 'ngSanitize', 'ngTouch', services.name, filters.name, directives.name, constants.name])
   .run(run)
   .config(config)
   .config(router)

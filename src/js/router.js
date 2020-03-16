@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-03-03 18:23:06
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-16 14:26:33
+ * @LastEditTime: 2020-03-16 17:36:26
  */
 const ocLazyLoadFn = ($ocLazyLoad, urls) => {
   let arr = [];
@@ -53,6 +53,18 @@ const router = ['$urlRouterProvider', '$stateProvider', ($urlRouterProvider, $st
           return ocLazyLoadFn($ocLazyLoad, ['./controllers/app/dashboard/dashboard']);
         }
       }
+    })
+    .state('app.ui', {
+      url: '/ui',
+      template: '<div ui-view class="fade-in-up"></div>'
+    })
+    .state('app.ui.buttons', {
+      url: '/buttons',
+      template: require('./controllers/app/ui/buttons/buttons.template.html').default
+    })
+    .state('app.ui.icons', {
+      url: '/icons',
+      template: require('./controllers/app/ui/icons/icons.template.html').default
     })
     .state('apps', {
       abstract: true,
