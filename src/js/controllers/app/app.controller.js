@@ -4,14 +4,16 @@
  * @Autor: Pumpking
  * @Date: 2020-03-08 21:45:26
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-11 20:03:55
+ * @LastEditTime: 2020-03-16 16:26:21
  */
-const AppController = ['$scope', '$window',
-  function ($scope, $window) {
+const AppController = ['$scope', '$window', "DATA_BASE",
+  function ($scope, $window, DATA_BASE) {
     // add 'ie' classes to html
     var isIE = !!navigator.userAgent.match(/MSIE/i);
     isIE && angular.element($window.document.body).addClass('ie');
     isSmartDevice($window) && angular.element($window.document.body).addClass('smart');
+
+    $scope.commonImages = DATA_BASE.commonImages;
 
     // config
     $scope.app = {
@@ -39,21 +41,6 @@ const AppController = ['$scope', '$window',
         asideFolded: false,
         asideDock: false,
         container: false
-      },
-      img: {
-        logo: require('../../../assets/images/logo.png').default,
-        a0: require('../../../assets/images/a0.jpg').default,
-        a1: require('../../../assets/images/a1.jpg').default,
-        a2: require('../../../assets/images/a2.jpg').default,
-        a3: require('../../../assets/images/a3.jpg').default,
-        a4: require('../../../assets/images/a4.jpg').default,
-        a5: require('../../../assets/images/a5.jpg').default,
-        a6: require('../../../assets/images/a6.jpg').default,
-        a7: require('../../../assets/images/a7.jpg').default,
-        a8: require('../../../assets/images/a8.jpg').default,
-        a9: require('../../../assets/images/a9.jpg').default,
-        a10: require('../../../assets/images/a10.jpg').default,
-
       }
     }
 

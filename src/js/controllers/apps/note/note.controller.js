@@ -4,15 +4,11 @@
  * @Autor: Pumpking
  * @Date: 2020-03-16 14:13:05
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-16 15:13:57
+ * @LastEditTime: 2020-03-16 16:13:01
  */
-import {
-  note
-} from "../../../constants/database";
-
 export default angular.module('apps.note.controller', [])
-  .controller('NoteCtrl', ['$scope', '$http', function ($scope, $http) {
-    $scope.notes = note.notes;
+  .controller('NoteCtrl', ['$scope', '$http', 'DATA_BASE', function ($scope, $http, DATA_BASE) {
+    $scope.notes = DATA_BASE.note.notes;
     // set default note
     $scope.note = $scope.notes[0];
     $scope.notes[0].selected = true;

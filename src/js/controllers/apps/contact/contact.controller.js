@@ -6,15 +6,12 @@
  * @LastEditors: Pumpking
  * @LastEditTime: 2020-03-16 15:24:27
  */
-import {
-  contact
-} from "../../../constants/database";
 
 export default angular.module('apps.contact.controller', [])
-  .controller('ContactCtrl', ['$scope', '$http', '$filter', function ($scope, $http, $filter) {
-    $scope.items = contact.items;
+  .controller('ContactCtrl', ['$scope', '$http', '$filter', 'DATA_BASE', function ($scope, $http, $filter, DATA_BASE) {
+    $scope.items = DATA_BASE.contact.items;
     angular.forEach($scope.items, (item) => {
-      item.avatar = $scope.app.img.a0;
+      item.avatar = $scope.commonImages.a0;
     });
     $scope.item = $filter('orderBy')($scope.items, 'first')[0];
     $scope.item.selected = true;
@@ -91,7 +88,7 @@ export default angular.module('apps.contact.controller', [])
     $scope.createItem = function () {
       var item = {
         group: 'Friends',
-        avatar: $scope.app.img.a0
+        avatar: $scope.commonImages.a0
       };
       $scope.items.push(item);
       $scope.selectItem(item);

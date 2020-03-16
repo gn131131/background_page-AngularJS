@@ -4,8 +4,23 @@
  * @Autor: Pumpking
  * @Date: 2020-03-06 13:24:30
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-06 13:24:31
+ * @LastEditTime: 2020-03-16 16:26:51
  */
+const commonImages = {
+  logo: require('../../assets/images/logo.png').default,
+  a0: require('../../assets/images/a0.jpg').default,
+  a1: require('../../assets/images/a1.jpg').default,
+  a2: require('../../assets/images/a2.jpg').default,
+  a3: require('../../assets/images/a3.jpg').default,
+  a4: require('../../assets/images/a4.jpg').default,
+  a5: require('../../assets/images/a5.jpg').default,
+  a6: require('../../assets/images/a6.jpg').default,
+  a7: require('../../assets/images/a7.jpg').default,
+  a8: require('../../assets/images/a8.jpg').default,
+  a9: require('../../assets/images/a9.jpg').default,
+  a10: require('../../assets/images/a10.jpg').default
+};
+
 const login = {
   username: 'admin',
   password: '123456',
@@ -16,8 +31,7 @@ const login = {
 };
 
 const note = {
-  "notes":[
-    {
+  "notes": [{
       "content": "AngularJS - HTML enhanced for web apps!",
       "color": "warning",
       "date": 1410788931159
@@ -36,9 +50,8 @@ const note = {
 };
 
 const contact = {
-  "items":[
-    {
-      "group" : "Partner",
+  "items": [{
+      "group": "Partner",
       "first": "Bertina",
       "last": "Robert",
       "company": "",
@@ -48,7 +61,7 @@ const contact = {
       "notes": ""
     },
     {
-      "group" : "Coworkers",
+      "group": "Coworkers",
       "first": "Alexandra",
       "last": "Galton",
       "company": "Google Inc.",
@@ -58,7 +71,7 @@ const contact = {
       "notes": ""
     },
     {
-       "group" : "Family",
+      "group": "Family",
       "first": "Angela",
       "last": "Oscar",
       "company": "Max Inc.",
@@ -68,7 +81,7 @@ const contact = {
       "notes": ""
     },
     {
-      "group" : "Friends",
+      "group": "Friends",
       "first": "Annabelle",
       "last": "",
       "company": "",
@@ -78,7 +91,7 @@ const contact = {
       "notes": ""
     },
     {
-      "group" : "Friends",
+      "group": "Friends",
       "first": "Brenda",
       "last": "Lanny",
       "company": "",
@@ -88,7 +101,7 @@ const contact = {
       "notes": ""
     },
     {
-      "group" : "Group",
+      "group": "Group",
       "first": "Britney",
       "last": "Patricia",
       "company": "",
@@ -98,7 +111,7 @@ const contact = {
       "notes": ""
     },
     {
-      "group" : "Friends",
+      "group": "Friends",
       "first": "Blanche",
       "last": "Julian",
       "company": "",
@@ -108,7 +121,7 @@ const contact = {
       "notes": ""
     },
     {
-      "group" : "Group",
+      "group": "Group",
       "first": "Deborah",
       "last": "Darryl",
       "company": "",
@@ -118,7 +131,7 @@ const contact = {
       "notes": ""
     },
     {
-      "group" : "Group",
+      "group": "Group",
       "first": "Elizabeth",
       "last": "",
       "company": "",
@@ -128,7 +141,7 @@ const contact = {
       "notes": ""
     },
     {
-      "group" : "Partners",
+      "group": "Partners",
       "first": "Emily",
       "last": "Jolyon",
       "company": "",
@@ -138,7 +151,7 @@ const contact = {
       "notes": ""
     },
     {
-      "group" : "Partners",
+      "group": "Partners",
       "first": "Gertrude",
       "last": "",
       "company": "",
@@ -148,7 +161,7 @@ const contact = {
       "notes": ""
     },
     {
-      "group" : "Family",
+      "group": "Family",
       "first": "Gwynne",
       "last": "Rufus",
       "company": "",
@@ -158,7 +171,7 @@ const contact = {
       "notes": ""
     },
     {
-      "group" : "Coworkers",
+      "group": "Coworkers",
       "first": "Octavia",
       "last": "Swaine",
       "company": "",
@@ -170,4 +183,11 @@ const contact = {
   ]
 };
 
-export { login, note, contact };
+const database = {
+  commonImages,
+  login,
+  note,
+  contact
+};
+
+export default database;
