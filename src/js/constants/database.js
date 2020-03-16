@@ -45,8 +45,7 @@ const contact = {
       "mobile": "121 364 135",
       "home": "(021) 1234 8755",
       "work": "(021) 9000 9877",
-      "notes": "",
-      "avatar": "img/a3.jpg"
+      "notes": ""
     },
     {
       "group" : "Coworkers",
@@ -56,8 +55,7 @@ const contact = {
       "mobile": "102 394 821",
       "home": "(021) 9876 9485",
       "work": "(021) 2130 3049",
-      "notes": "",
-      "avatar": "img/a0.jpg"
+      "notes": ""
     },
     {
        "group" : "Family",
@@ -67,8 +65,7 @@ const contact = {
       "mobile": "100 364 135",
       "home": "(021) 1234 8755",
       "work": "(021) 9000 9877",
-      "notes": "",
-      "avatar": "img/a1.jpg"
+      "notes": ""
     },
     {
       "group" : "Friends",
@@ -78,8 +75,7 @@ const contact = {
       "mobile": "324 123 123",
       "home": "(021) 1234 8755",
       "work": "(021) 9000 9877",
-      "notes": "",
-      "avatar": "img/a2.jpg"
+      "notes": ""
     },
     {
       "group" : "Friends",
@@ -89,8 +85,7 @@ const contact = {
       "mobile": "765 434 565",
       "home": "(021) 1234 8755",
       "work": "(021) 9000 9877",
-      "notes": "",
-      "avatar": "img/a4.jpg"
+      "notes": ""
     },
     {
       "group" : "Group",
@@ -100,8 +95,7 @@ const contact = {
       "mobile": "432 364 455",
       "home": "(021) 1234 8755",
       "work": "(021) 9000 9877",
-      "notes": "",
-      "avatar": "img/a5.jpg"
+      "notes": ""
     },
     {
       "group" : "Friends",
@@ -111,8 +105,7 @@ const contact = {
       "mobile": "433 364 234",
       "home": "(021) 1234 8755",
       "work": "(021) 9000 9877",
-      "notes": "",
-      "avatar": "img/a6.jpg"
+      "notes": ""
     },
     {
       "group" : "Group",
@@ -122,8 +115,7 @@ const contact = {
       "mobile": "332 431 223",
       "home": "(021) 1234 8755",
       "work": "(021) 9000 9877",
-      "notes": "",
-      "avatar": "img/a7.jpg"
+      "notes": ""
     },
     {
       "group" : "Group",
@@ -133,8 +125,7 @@ const contact = {
       "mobile": "543 453 890",
       "home": "(021) 1234 8755",
       "work": "(021) 9000 9877",
-      "notes": "",
-      "avatar": "img/a8.jpg"
+      "notes": ""
     },
     {
       "group" : "Partners",
@@ -144,8 +135,7 @@ const contact = {
       "mobile": "656 565 789",
       "home": "(021) 1234 8755",
       "work": "(021) 9000 9877",
-      "notes": "",
-      "avatar": "img/a9.jpg"
+      "notes": ""
     },
     {
       "group" : "Partners",
@@ -155,8 +145,7 @@ const contact = {
       "mobile": "434 987 898",
       "home": "(021) 1234 8755",
       "work": "(021) 9000 9877",
-      "notes": "",
-      "avatar": "img/a8.jpg"
+      "notes": ""
     },
     {
       "group" : "Family",
@@ -166,8 +155,7 @@ const contact = {
       "mobile": "098 888 897",
       "home": "(021) 1234 8755",
       "work": "(021) 9000 9877",
-      "notes": "",
-      "avatar": "img/a8.jpg"
+      "notes": ""
     },
     {
       "group" : "Coworkers",
@@ -177,8 +165,7 @@ const contact = {
       "mobile": "854 656 879",
       "home": "(021) 1234 8755",
       "work": "(021) 9000 9877",
-      "notes": "",
-      "avatar": "img/a8.jpg"
+      "notes": ""
     }
   ]
 };

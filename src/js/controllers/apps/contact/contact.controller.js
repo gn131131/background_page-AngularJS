@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-03-16 14:13:05
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-16 14:25:12
+ * @LastEditTime: 2020-03-16 15:24:27
  */
 import {
   contact
@@ -13,24 +13,27 @@ import {
 export default angular.module('apps.contact.controller', [])
   .controller('ContactCtrl', ['$scope', '$http', '$filter', function ($scope, $http, $filter) {
     $scope.items = contact.items;
+    angular.forEach($scope.items, (item) => {
+      item.avatar = $scope.app.img.a0;
+    });
     $scope.item = $filter('orderBy')($scope.items, 'first')[0];
     $scope.item.selected = true;
 
     $scope.filter = '';
     $scope.groups = [{
-        name: 'Coworkers'
+        name: '工作'
       },
       {
-        name: 'Family'
+        name: '家庭'
       },
       {
-        name: 'Friends'
+        name: '朋友'
       },
       {
-        name: 'Partners'
+        name: '队友'
       },
       {
-        name: 'Group'
+        name: '小组'
       }
     ];
 
@@ -88,7 +91,7 @@ export default angular.module('apps.contact.controller', [])
     $scope.createItem = function () {
       var item = {
         group: 'Friends',
-        avatar: 'img/a0.jpg'
+        avatar: $scope.app.img.a0
       };
       $scope.items.push(item);
       $scope.selectItem(item);

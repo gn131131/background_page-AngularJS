@@ -1,3 +1,11 @@
+<!--
+ * @Description: 
+ * @Version: 1.0
+ * @Autor: Pumpking
+ * @Date: 2020-03-16 14:08:54
+ * @LastEditors: Pumpking
+ * @LastEditTime: 2020-03-16 15:16:24
+ -->
 <!-- hbox layout -->
 <div class="hbox hbox-auto-xs bg-light " ng-init="
   app.settings.asideFixed = true;
@@ -10,13 +18,13 @@
   <div class="col w-lg lt b-r">
     <div class="vbox">
       <div class="wrapper">
-        <a href class="pull-right btn btn-sm btn-info m-t-n-xs" ng-click="createNote()">New</a>
-        <div class="h4">Notes</div>
+        <a href class="pull-right btn btn-sm btn-info m-t-n-xs" ng-click="createNote()">新建</a>
+        <div class="h4">笔记</div>
       </div>
       <div class="wrapper b-t m-t-xxs">
         <div class="input-group">
           <span class="input-group-addon input-sm"><i class="fa fa-search"></i></span>
-          <input type="text" class="form-control input-sm" placeholder="search" ng-model="query">
+          <input type="text" class="form-control input-sm" placeholder="搜索" ng-model="query">
         </div>
       </div>
       <div class="row-row">
@@ -26,7 +34,7 @@
               <div class="list-group">
                 <a ng-repeat="note in notes | filter:query | orderBy:'date':true" class="list-group-item b-l-{{note.color}} b-l-3x hover-anchor" ng-class="{'hover': note.selected }" ng-click="selectNote(note)">
                   <span ng-click='deleteNote(note)' class="pull-right text-muted hover-action"><i class="fa fa-times"></i></span>
-                  <span class="block text-ellipsis">{{ note.content ? note.content : 'Empty note' }}</span>
+                  <span class="block text-ellipsis">{{ note.content ? note.content : '空笔记' }}</span>
                   <small class="text-muted">{{ note.date | fromNow }}</small>
                 </a>
               </div>
@@ -42,7 +50,7 @@
   <div class="col">
     <div class="vbox">
       <div class="wrapper bg-light lt b-b">
-        <span class="text-muted">Created on:</span> <span>{{ note.date  | date:'MMM-dd-yyyy H:mm' }}</span>
+        <span class="text-muted">创建于：</span> <span>{{ note.date  | date:'yyyy-MM-dd hh:mm:ss' }}</span>
         <div class="m-l inline dropdown" dropdown>
           <a class="v-middle pos-rlt inline bg-{{note.color}}" dropdown-toggle style="width:16px;height:16px;top:-2px"></a>
           <div class="dropdown-menu animated fadeInUp w wrapper">

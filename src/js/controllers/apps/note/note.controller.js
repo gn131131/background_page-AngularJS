@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-03-16 14:13:05
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-16 14:24:43
+ * @LastEditTime: 2020-03-16 15:13:57
  */
 import {
   note
@@ -21,7 +21,7 @@ export default angular.module('apps.note.controller', [])
 
     $scope.createNote = function () {
       var note = {
-        content: 'New note',
+        content: '',
         color: $scope.colors[Math.floor((Math.random() * 3))],
         date: Date.now()
       };
