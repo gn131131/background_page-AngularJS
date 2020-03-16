@@ -4,13 +4,9 @@
  * @Autor: Pumpking
  * @Date: 2020-02-11 16:13:25
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-16 17:08:20
+ * @LastEditTime: 2020-03-16 19:20:34
  */
 "use strict";
-
-import "./vendor/flexble/base.css";
-import "./vendor/flexble/flexible";
-
 import "./style.css";
 
 import oclazyload from "oclazyload";

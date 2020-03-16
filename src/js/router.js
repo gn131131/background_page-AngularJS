@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-03-03 18:23:06
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-16 17:36:26
+ * @LastEditTime: 2020-03-16 18:51:27
  */
 const ocLazyLoadFn = ($ocLazyLoad, urls) => {
   let arr = [];
@@ -65,6 +65,35 @@ const router = ['$urlRouterProvider', '$stateProvider', ($urlRouterProvider, $st
     .state('app.ui.icons', {
       url: '/icons',
       template: require('./controllers/app/ui/icons/icons.template.html').default
+    })
+    .state('app.ui.grid', {
+      url: '/grid',
+      template: require('./controllers/app/ui/grid/grid.template.html').default
+    })
+    .state('app.ui.widgets', {
+      url: '/widgets',
+      template: require('./controllers/app/ui/widgets/widgets.template.html').default
+    })
+    .state('app.ui.bootstrap', {
+      url: '/bootstrap',
+      template: require('./controllers/app/ui/bootstrap/bootstrap.template.html').default,
+      resolve: {
+        loadBootstrapController: ($ocLazyLoad) => {
+          return ocLazyLoadFn($ocLazyLoad, ['./controllers/app/ui/bootstrap/bootstrap']);
+        }
+      }
+    })
+    .state('app.ui.sortable', {
+      url: '/sortable',
+      template: require('./controllers/app/ui/sortable/sortable.template.html').default
+    })
+    .state('app.ui.portlet', {
+      url: '/portlet',
+      template: require('./controllers/app/ui/portlet/portlet.template.html').default
+    })
+    .state('app.ui.timeline', {
+      url: '/timeline',
+      template: require('./controllers/app/ui/timeline/timeline.template.html').default
     })
     .state('apps', {
       abstract: true,

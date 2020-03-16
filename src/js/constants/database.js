@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-03-06 13:24:30
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-16 16:26:51
+ * @LastEditTime: 2020-03-16 19:01:38
  */
 const commonImages = {
   logo: require('../../assets/images/logo.png').default,
@@ -18,7 +18,11 @@ const commonImages = {
   a7: require('../../assets/images/a7.jpg').default,
   a8: require('../../assets/images/a8.jpg').default,
   a9: require('../../assets/images/a9.jpg').default,
-  a10: require('../../assets/images/a10.jpg').default
+  a10: require('../../assets/images/a10.jpg').default,
+  c0: require('../../assets/images/c0.jpg').default,
+  c1: require('../../assets/images/c1.jpg').default,
+  c2: require('../../assets/images/c2.jpg').default,
+  c3: require('../../assets/images/c3.jpg').default
 };
 
 const login = {
