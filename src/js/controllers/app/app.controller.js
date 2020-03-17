@@ -4,10 +4,10 @@
  * @Autor: Pumpking
  * @Date: 2020-03-08 21:45:26
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-16 16:26:21
+ * @LastEditTime: 2020-03-17 11:35:41
  */
-const AppController = ['$scope', '$window', "DATA_BASE",
-  function ($scope, $window, DATA_BASE) {
+const AppController = ['$scope', '$window', "DATA_BASE", "$state",
+  function ($scope, $window, DATA_BASE, $state) {
     // add 'ie' classes to html
     var isIE = !!navigator.userAgent.match(/MSIE/i);
     isIE && angular.element($window.document.body).addClass('ie');

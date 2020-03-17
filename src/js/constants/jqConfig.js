@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-03-12 14:16:47
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-13 16:31:12
+ * @LastEditTime: 2020-03-16 19:31:54
  */
 const jqConfig = {
   easyPieChart: ['https://cdn.staticfile.org/easy-pie-chart/1.2.5/jquery.easy-pie-chart.js'],
