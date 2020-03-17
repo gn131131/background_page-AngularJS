@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-03-03 19:50:27
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-17 17:44:06
+ * @LastEditTime: 2020-03-17 18:21:12
  */
 const config = ['$locationProvider', '$ocLazyLoadProvider', ($locationProvider, $ocLazyLoadProvider) => {
   $locationProvider.html5Mode(true);
@@ -12,14 +12,20 @@ const config = ['$locationProvider', '$ocLazyLoadProvider', ($locationProvider, 
   $ocLazyLoadProvider.config({
     debug: false,
     events: true,
-    modules: [
-      {
+    modules: [{
         name: 'angularBootstrapNavTree',
         files: [
           require('../vendor/angular-bootstrap-nav-tree/abn_tree_directive.js').default,
           require('../vendor/angular-bootstrap-nav-tree/abn_tree.css').default
         ]
-      }
+      },
+      {
+        name: 'toaster',
+        files: [
+          require('../vendor/angularjs-toaster/toaster.js').default,
+          require('../vendor/angularjs-toaster/toaster.css').default
+        ]
+      },
     ]
   });
 }];

@@ -142,6 +142,15 @@ const router = ['$urlRouterProvider', '$stateProvider', ($urlRouterProvider, $st
         }]
       }
     })
+    .state('app.ui.toaster', {
+      url: '/toaster',
+      template: require('./controllers/app/ui/toaster/toaster.template.html').default,
+      resolve: {
+        loadToasterController: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return ocLazyLoadFn($ocLazyLoad, ['./controllers/app/ui/toaster/toaster'], ['toaster']);
+        }]
+      }
+    })
 }];
 
 export default router;
