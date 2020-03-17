@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-03-16 15:53:50
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-16 17:14:32
+ * @LastEditTime: 2020-03-17 17:06:56
  */
 import setNgAnimate from "./setnganimate";
 import uiButterbar from "./ui-butterbar";

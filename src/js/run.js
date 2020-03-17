@@ -2,9 +2,9 @@
  * @Description: 
  * @Version: 1.0
  * @Autor: Pumpking
- * @Date: 2020-03-03 19:50:27
+ * @Date: 2020-03-10 18:29:44
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-17 11:39:21
+ * @LastEditTime: 2020-03-17 11:52:05
  */
 const run = ['$templateCache', '$rootScope', '$state', '$stateParams', ($templateCache, $rootScope, $state, $stateParams) => {
   $rootScope.$state = $state;

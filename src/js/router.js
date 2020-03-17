@@ -4,10 +4,20 @@
  * @Autor: Pumpking
  * @Date: 2020-03-03 18:23:06
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-16 18:51:27
+ * @LastEditTime: 2020-03-17 17:48:13
  */
-const ocLazyLoadFn = ($ocLazyLoad, urls) => {
+const ocLazyLoadFn = ($ocLazyLoad, urls, vendors) => {
   let arr = [];
+  if (vendors) {
+    vendors.map(item => {
+      arr.push(new Promise((resolve) => {
+        $ocLazyLoad.load({
+          name: item
+        });
+        resolve();
+      }));
+    });
+  }
   urls.map(item => {
     arr.push(new Promise((resolve) => {
       import(`${item}`).then(module => {
@@ -19,7 +29,7 @@ const ocLazyLoadFn = ($ocLazyLoad, urls) => {
     }));
   });
   return Promise.all(arr);
-}
+};
 
 const router = ['$urlRouterProvider', '$stateProvider', ($urlRouterProvider, $stateProvider) => {
   $urlRouterProvider.otherwise('/access/login');
@@ -35,9 +45,9 @@ const router = ['$urlRouterProvider', '$stateProvider', ($urlRouterProvider, $st
       controller: 'LoginController',
       controllerAs: 'vm',
       resolve: {
-        loadLoginController: ($ocLazyLoad) => {
+        loadLoginController: ['$ocLazyLoad', ($ocLazyLoad) => {
           return ocLazyLoadFn($ocLazyLoad, ['./controllers/access/login/login']);
-        }
+        }]
       }
     })
     .state('app', {
@@ -49,9 +59,37 @@ const router = ['$urlRouterProvider', '$stateProvider', ($urlRouterProvider, $st
       url: '/dashboard',
       template: require('./controllers/app/dashboard/dashboard.template.html').default,
       resolve: {
-        loadLoginController: ($ocLazyLoad) => {
+        loadLoginController: ['$ocLazyLoad', ($ocLazyLoad) => {
           return ocLazyLoadFn($ocLazyLoad, ['./controllers/app/dashboard/dashboard']);
-        }
+        }]
+      }
+    })
+    .state('apps', {
+      abstract: true,
+      url: '/apps',
+      template: require('./controllers/apps/layout.html').default
+    })
+    .state('apps.note', {
+      url: '/note',
+      template: require('./controllers/apps/note/note.template.html').default,
+      resolve: {
+        loadNoteController: ['$ocLazyLoad', 'uiLoad', ($ocLazyLoad, uiLoad) => {
+          return uiLoad.load([
+            'https://cdn.staticfile.org/moment.js/2.24.0/moment.min.js',
+            'https://cdn.staticfile.org/moment.js/2.24.0/locale/zh-cn.js'
+          ]).then(() => {
+            return ocLazyLoadFn($ocLazyLoad, ['./controllers/apps/note/note']);
+          })
+        }]
+      }
+    })
+    .state('apps.contact', {
+      url: '/contact',
+      template: require('./controllers/apps/contact/contact.template.html').default,
+      resolve: {
+        loadContactController: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return ocLazyLoadFn($ocLazyLoad, ['./controllers/apps/contact/contact']);
+        }]
       }
     })
     .state('app.ui', {
@@ -78,9 +116,9 @@ const router = ['$urlRouterProvider', '$stateProvider', ($urlRouterProvider, $st
       url: '/bootstrap',
       template: require('./controllers/app/ui/bootstrap/bootstrap.template.html').default,
       resolve: {
-        loadBootstrapController: ($ocLazyLoad) => {
+        loadBootstrapController: ['$ocLazyLoad', ($ocLazyLoad) => {
           return ocLazyLoadFn($ocLazyLoad, ['./controllers/app/ui/bootstrap/bootstrap']);
-        }
+        }]
       }
     })
     .state('app.ui.sortable', {
@@ -95,27 +133,13 @@ const router = ['$urlRouterProvider', '$stateProvider', ($urlRouterProvider, $st
       url: '/timeline',
       template: require('./controllers/app/ui/timeline/timeline.template.html').default
     })
-    .state('apps', {
-      abstract: true,
-      url: '/apps',
-      template: require('./controllers/apps/layout.html').default
-    })
-    .state('apps.note', {
-      url: '/note',
-      template: require('./controllers/apps/note/note.template.html').default,
+    .state('app.ui.tree', {
+      url: '/tree',
+      template: require('./controllers/app/ui/tree/tree.template.html').default,
       resolve: {
-        loadNoteController: ($ocLazyLoad) => {
-          return ocLazyLoadFn($ocLazyLoad, ['./controllers/apps/note/note']);
-        }
-      }
-    })
-    .state('apps.contact', {
-      url: '/contact',
-      template: require('./controllers/apps/contact/contact.template.html').default,
-      resolve: {
-        loadContactController: ($ocLazyLoad) => {
-          return ocLazyLoadFn($ocLazyLoad, ['./controllers/apps/contact/contact']);
-        }
+        loadTreeController: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return ocLazyLoadFn($ocLazyLoad, ['./controllers/app/ui/tree/tree'], ['angularBootstrapNavTree']);
+        }]
       }
     })
 }];
