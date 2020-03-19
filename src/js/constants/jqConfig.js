@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-03-12 14:16:47
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-17 18:25:03
+ * @LastEditTime: 2020-03-19 12:01:59
  */
 const jqConfig = {
   easyPieChart: ['https://cdn.staticfile.org/easy-pie-chart/1.2.5/jquery.easy-pie-chart.js'],
@@ -21,7 +21,7 @@ const jqConfig = {
     'https://cdn.staticfile.org/flot/0.8.3/jquery.flot.pie.min.js'
   ],
   slimScroll: ['https://cdn.staticfile.org/jQuery-slimScroll/1.3.8/jquery.slimscroll.min.js'],
-  sortable: ['https://cdn.staticfile.org/jquery-sortable/0.9.13/jquery-sortable-min.js'],
+  sortable: [],
   nestable: ['https://cdn.staticfile.org/nestable2/1.6.0/jquery.nestable.min.js',
     'https://cdn.staticfile.org/nestable2/1.6.0/jquery.nestable.min.css'
   ],

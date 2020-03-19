@@ -4,12 +4,21 @@
  * @Autor: Pumpking
  * @Date: 2020-03-03 18:23:06
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-17 17:48:13
+ * @LastEditTime: 2020-03-19 15:00:21
  */
-const ocLazyLoadFn = ($ocLazyLoad, urls, vendors) => {
+const ocLazyLoadFn = ($ocLazyLoad, urls, modules, vendors) => {
   let arr = [];
-  if (vendors) {
+  if (vendors && vendors.length > 0) {
     vendors.map(item => {
+      arr.push(new Promise((resolve) => {
+        import(`../vendors/${item}`).then(() => {
+          resolve();
+        });
+      }));
+    });
+  }
+  if (modules && modules.length > 0) {
+    modules.map(item => {
       arr.push(new Promise((resolve) => {
         $ocLazyLoad.load({
           name: item
@@ -18,16 +27,18 @@ const ocLazyLoadFn = ($ocLazyLoad, urls, vendors) => {
       }));
     });
   }
-  urls.map(item => {
-    arr.push(new Promise((resolve) => {
-      import(`${item}`).then(module => {
-        $ocLazyLoad.load({
-          name: module.default.name
+  if (urls && urls.length > 0) {
+    urls.map(item => {
+      arr.push(new Promise((resolve) => {
+        import(`${item}`).then(module => {
+          $ocLazyLoad.load({
+            name: module.default.name
+          });
+          resolve(module.default.controller);
         });
-        resolve(module.default.controller);
-      });
-    }));
-  });
+      }));
+    });
+  }
   return Promise.all(arr);
 };
 
@@ -74,12 +85,7 @@ const router = ['$urlRouterProvider', '$stateProvider', ($urlRouterProvider, $st
       template: require('./controllers/apps/note/note.template.html').default,
       resolve: {
         loadNoteController: ['$ocLazyLoad', 'uiLoad', ($ocLazyLoad, uiLoad) => {
-          return uiLoad.load([
-            'https://cdn.staticfile.org/moment.js/2.24.0/moment.min.js',
-            'https://cdn.staticfile.org/moment.js/2.24.0/locale/zh-cn.js'
-          ]).then(() => {
-            return ocLazyLoadFn($ocLazyLoad, ['./controllers/apps/note/note']);
-          })
+          return ocLazyLoadFn($ocLazyLoad, ['./controllers/apps/note/note'], [], ['moment/moment.min.js', 'moment/locale/zh-cn.js']);
         }]
       }
     })
@@ -123,7 +129,12 @@ const router = ['$urlRouterProvider', '$stateProvider', ($urlRouterProvider, $st
     })
     .state('app.ui.sortable', {
       url: '/sortable',
-      template: require('./controllers/app/ui/sortable/sortable.template.html').default
+      template: require('./controllers/app/ui/sortable/sortable.template.html').default,
+      resolve: {
+        loadTreeController: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return ocLazyLoadFn($ocLazyLoad, [], [], ['sortable/jquery.sortable.js']);
+        }]
+      }
     })
     .state('app.ui.portlet', {
       url: '/portlet',
