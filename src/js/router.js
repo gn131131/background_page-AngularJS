@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-03-03 18:23:06
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-19 15:18:55
+ * @LastEditTime: 2020-03-19 16:46:19
  */
 const ocLazyLoadFn = ($ocLazyLoad, urls, modules, vendors) => {
   let arr = [];
@@ -103,6 +103,7 @@ const router = ['$urlRouterProvider', '$stateProvider', ($urlRouterProvider, $st
         }]
       }
     })
+    // ui
     .state('app.ui', {
       url: '/ui',
       template: '<div ui-view class="fade-in-up"></div>'
@@ -167,6 +168,19 @@ const router = ['$urlRouterProvider', '$stateProvider', ($urlRouterProvider, $st
         }]
       }
     })
+    // table
+    .state('app.table', {
+      url: '/table',
+      template: '<div ui-view></div>'
+    })
+    .state('app.table.static', {
+      url: '/static',
+      template: require('./controllers/app/table/static/static.template.html').default,
+    })
+    .state('app.table.datatable', {
+      url: '/datatable',
+      template: require('./controllers/app/table/datatable/datatable.template.html').default,
+  })
 }];
 
 export default router;

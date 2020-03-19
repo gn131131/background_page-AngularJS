@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-03-06 14:16:56
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-06 22:36:33
+ * @LastEditTime: 2020-03-19 17:22:45
  */
 const path = require("path");
 const merge = require("webpack-merge");
@@ -20,7 +20,14 @@ module.exports = merge(common, {
     port: 8001,
     compress: true,
     hot: true,
-    historyApiFallback: true
+    historyApiFallback: true,
+    proxy: {
+      '/ajax/': {
+        target: 'http://dev.admin.skill.jnshu.com/',
+        changeOrigin: true,
+        secure: true
+      }
+    }
   },
   plugins: [
     new webpack.NamedModulesPlugin(),
