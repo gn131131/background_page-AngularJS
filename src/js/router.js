@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-03-03 18:23:06
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-19 15:05:12
+ * @LastEditTime: 2020-03-19 15:18:55
  */
 const ocLazyLoadFn = ($ocLazyLoad, urls, modules, vendors) => {
   let arr = [];
@@ -85,7 +85,12 @@ const router = ['$urlRouterProvider', '$stateProvider', ($urlRouterProvider, $st
       template: require('./controllers/apps/note/note.template.html').default,
       resolve: {
         loadNoteController: ['$ocLazyLoad', 'uiLoad', ($ocLazyLoad, uiLoad) => {
-          return ocLazyLoadFn($ocLazyLoad, ['./controllers/apps/note/note'], [], ['moment/moment.min.js']);
+          return uiLoad.load([
+            'https://cdn.staticfile.org/moment.js/2.24.0/moment.min.js',
+            'https://cdn.staticfile.org/moment.js/2.24.0/locale/zh-cn.js'
+          ]).then(() => {
+            return ocLazyLoadFn($ocLazyLoad, ['./controllers/apps/note/note']);
+          })
         }]
       }
     })
