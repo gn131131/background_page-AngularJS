@@ -1,5 +1,13 @@
+<!--
+ * @Description: 
+ * @Version: 1.0
+ * @Autor: Pumpking
+ * @Date: 2020-03-17 18:15:05
+ * @LastEditors: Pumpking
+ * @LastEditTime: 2020-03-19 16:30:09
+ -->
 <div class="bg-light lter b-b wrapper-md">
-  <h1 class="m-n font-thin h3">Toaster</h1>
+  <h1 class="m-n font-thin h3">提示</h1>
 </div>
 <div class="wrapper-md" ng-controller="ToasterDemoCtrl">
   <!-- toaster directive -->
@@ -8,17 +16,17 @@
   <div class="row">
     <div class="col-sm-6">
       <div class="form-group">
-        <label>Title</label>
-        <input type="text" class="form-control" placeholder="Enter a title..." ng-model="toaster.title">
+        <label>标题</label>
+        <input type="text" class="form-control" placeholder="输入标题..." ng-model="toaster.title">
       </div>
 
       <div class="form-group">
-        <label>Message</label>
-        <textarea class="form-control" placeholder="Enter a message" rows="5" ng-model="toaster.text"></textarea>
+        <label>内容</label>
+        <textarea class="form-control" placeholder="输入内容..." rows="5" ng-model="toaster.text"></textarea>
       </div>
     </div>
     <div class="col-sm-6">
-      <label>Toast Type</label>
+      <label>提示样式类型</label>
       <div class="radio">
         <label class="i-checks">
           <input type="radio" name="toasts" ng-model="toaster.type" value="success">
@@ -57,6 +65,6 @@
     </div>
   </div>
 
-  <button class="btn btn-info" ng-click="pop()">Show a Toaster</button>
+  <button class="btn btn-info" ng-click="pop()">显示提示</button>
 
 </div>
