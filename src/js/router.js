@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-03-03 18:23:06
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-19 16:46:19
+ * @LastEditTime: 2020-03-19 17:47:02
  */
 const ocLazyLoadFn = ($ocLazyLoad, urls, modules, vendors) => {
   let arr = [];
@@ -177,10 +177,6 @@ const router = ['$urlRouterProvider', '$stateProvider', ($urlRouterProvider, $st
       url: '/static',
       template: require('./controllers/app/table/static/static.template.html').default,
     })
-    .state('app.table.datatable', {
-      url: '/datatable',
-      template: require('./controllers/app/table/datatable/datatable.template.html').default,
-  })
 }];
 
 export default router;
