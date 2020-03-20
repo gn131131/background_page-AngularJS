@@ -4,9 +4,8 @@
  * @Autor: Pumpking
  * @Date: 2020-03-20 15:29:19
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-20 15:41:24
+ * @LastEditTime: 2020-03-20 16:04:58
  */
-import jsonData from './largeLoad.json';
 export default angular.module('app.table.grid.controller', [])
     .controller('GridDemoCtrl', ['$scope', '$http', function ($scope, $http) {
         $scope.filterOptions = {
@@ -30,15 +29,17 @@ export default angular.module('app.table.grid.controller', [])
         $scope.getPagedDataAsync = function (pageSize, page, searchText) {
             setTimeout(function () {
                 var data;
-                if (searchText) {
-                    var ft = searchText.toLowerCase();
-                    data = jsonData.filter(function (item) {
-                        return JSON.stringify(item).toLowerCase().indexOf(ft) != -1;
-                    });
-                    $scope.setPagingData(data, page, pageSize);
-                } else {
-                    $scope.setPagingData(jsonData, page, pageSize);
-                }
+                import('./largeLoad.json').then((jsonData) => {
+                    if (searchText) {
+                        var ft = searchText.toLowerCase();
+                        data = jsonData.default.filter(function (item) {
+                            return JSON.stringify(item).toLowerCase().indexOf(ft) != -1;
+                        });
+                        $scope.setPagingData(data, page, pageSize);
+                    } else {
+                        $scope.setPagingData(jsonData.default, page, pageSize);
+                    }
+                });
             }, 100);
         };
 
