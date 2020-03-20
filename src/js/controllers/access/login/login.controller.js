@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-03-04 14:41:52
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-20 14:52:03
+ * @LastEditTime: 2020-03-20 15:09:27
  */
 // import { login } from "../../../constants/database";
 
@@ -15,9 +15,9 @@ export default angular
 
     vm.login = () => {
       if (vm.username === DATA_BASE.login.username && vm.password === DATA_BASE.login.password) {
-        ajax.login({name: vm.username, pwd: vm.password}).then((res) => {
-
-        });
+        // eg.post请求发送
+        ajax.login({name: vm.username, pwd: vm.password}).then((res) => {});
+        
         $state.go('app.dashboard');
       } else {
         if (vm.username !== DATA_BASE.login.username) {

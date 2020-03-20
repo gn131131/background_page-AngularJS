@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-03-03 18:23:06
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-19 17:47:02
+ * @LastEditTime: 2020-03-20 15:13:51
  */
 const ocLazyLoadFn = ($ocLazyLoad, urls, modules, vendors) => {
   let arr = [];
@@ -175,7 +175,20 @@ const router = ['$urlRouterProvider', '$stateProvider', ($urlRouterProvider, $st
     })
     .state('app.table.static', {
       url: '/static',
-      template: require('./controllers/app/table/static/static.template.html').default,
+      template: require('./controllers/app/table/static/static.template.html').default
+    })
+    .state('app.table.footable', {
+      url: '/footable',
+      template: require('./controllers/app/table/footable/footable.template.html').default,
+    })
+    .state('app.table.grid', {
+      url: '/grid',
+      template: require('./controllers/app/table/grid/grid.template.html').default,
+      resolve: {
+        deps: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return ocLazyLoadFn($ocLazyLoad, ['./controllers/app/table/grid/grid'], ['ngGrid']);
+        }]
+      }
     })
 }];
 

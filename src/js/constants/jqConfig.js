@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-03-12 14:16:47
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-19 17:46:46
+ * @LastEditTime: 2020-03-20 15:20:47
  */
 const jqConfig = {
   easyPieChart: ['https://cdn.staticfile.org/easy-pie-chart/1.2.5/jquery.easy-pie-chart.js'],
@@ -43,8 +43,8 @@ const jqConfig = {
   vectorMap: ['https://cdn.staticfile.org/jvectormap/1.2.2/jquery-jvectormap.min.js',
     'https://cdn.staticfile.org/jvectormap/1.2.2/jquery-jvectormap.min.css'
   ],
-  footable: ['https://cdn.staticfile.org/jquery-footable/3.1.6/footable.min.js',
-    'https://cdn.staticfile.org/jquery-footable/3.1.6/footable.bootstrap.css'
+  footable: ['https://cdn.staticfile.org/jquery-footable/2.0.1.5/js/footable.all.min.js',
+    'https://cdn.staticfile.org/jquery-footable/2.0.1.5/css/footable.core.min.css'
   ]
 };
 

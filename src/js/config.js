@@ -32,6 +32,14 @@ const config = ['$locationProvider', '$ocLazyLoadProvider', '$httpProvider', ($l
     debug: false,
     events: false,
     modules: [{
+        name: 'ngGrid',
+        files: [
+          require('../vendors/ng-grid/ng-grid.min.js').default,
+          require('../vendors/ng-grid/ng-grid.min.css').default,
+          require('../vendors/ng-grid/theme.css').default
+        ]
+      },
+      {
         name: 'angularBootstrapNavTree',
         files: [
           require('../vendors/angular-bootstrap-nav-tree/abn_tree_directive.js').default,

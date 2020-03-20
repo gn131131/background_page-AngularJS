@@ -22,8 +22,8 @@ module.exports = merge(common, {
     hot: true,
     historyApiFallback: true,
     proxy: {
-      '/ajax/': {
-        target: 'http://dev.admin.skill.jnshu.com/',
+      '/api/': {
+        target: 'http://www.baidu.com',
         changeOrigin: true,
         secure: true
       }
