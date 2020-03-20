@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-02-11 16:13:25
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-16 19:20:34
+ * @LastEditTime: 2020-03-20 15:05:30
  */
 "use strict";
 import "./style.css";
@@ -25,7 +25,10 @@ import directives from "./js/directives/directives";
 
 import constants from "./js/constants/constants";
 
-angular.module('app', ['ui.router', oclazyload, 'ui.bootstrap', 'ngAnimate', 'ngCookies', 'ngResource', 'ngSanitize', 'ngTouch', services.name, filters.name, directives.name, constants.name])
+import ajaxAddress from "./js/services/ajaxAddress";
+import ajaxService from "./js/services/ajaxService";
+
+angular.module('app', ['ui.router', oclazyload, 'ui.bootstrap', 'ngAnimate', 'ngCookies', 'ngResource', 'ngSanitize', 'ngTouch', services.name, filters.name, directives.name, constants.name, ajaxAddress.name, ajaxService.name])
   .run(run)
   .config(config)
   .config(router)
