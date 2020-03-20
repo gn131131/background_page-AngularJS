@@ -35,7 +35,7 @@ const jqConfig = {
   TouchSpin: ['https://cdn.staticfile.org/bootstrap-touchspin/4.2.5/jquery.bootstrap-touchspin.min.js',
     'https://cdn.staticfile.org/bootstrap-touchspin/4.2.5/jquery.bootstrap-touchspin.min.css'
   ],
-  wysiwyg: ['https://cdn.staticfile.org/bootstrap3-wysiwyg/0.3.3/bootstrap3-wysihtml5.all.min.js'],
+  wysiwyg: [],
   dataTable: ['https://cdn.staticfile.org/datatables/1.10.19/js/jquery.dataTables.min.js',
     'https://cdn.staticfile.org/datatables/1.10.19/js/dataTables.bootstrap.min.js',
     'https://cdn.staticfile.org/datatables/1.10.19/css/dataTables.bootstrap.min.css'

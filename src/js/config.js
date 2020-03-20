@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-03-03 19:50:27
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-19 17:08:12
+ * @LastEditTime: 2020-03-20 18:12:41
  */
 const config = ['$locationProvider', '$ocLazyLoadProvider', '$httpProvider', ($locationProvider, $ocLazyLoadProvider, $httpProvider) => {
   $locationProvider.html5Mode(true);
@@ -34,25 +34,45 @@ const config = ['$locationProvider', '$ocLazyLoadProvider', '$httpProvider', ($l
     modules: [{
         name: 'ngGrid',
         files: [
-          require('../vendors/ng-grid/ng-grid.min.js').default,
-          require('../vendors/ng-grid/ng-grid.min.css').default,
-          require('../vendors/ng-grid/theme.css').default
+          require('../vendors/modules/ng-grid/ng-grid.min.js').default,
+          require('../vendors/modules/ng-grid/ng-grid.min.css').default,
+          require('../vendors/modules/ng-grid/theme.css').default
         ]
       },
       {
         name: 'angularBootstrapNavTree',
         files: [
-          require('../vendors/angular-bootstrap-nav-tree/abn_tree_directive.js').default,
-          require('../vendors/angular-bootstrap-nav-tree/abn_tree.css').default
+          require('../vendors/modules/angular-bootstrap-nav-tree/abn_tree_directive.js').default,
+          require('../vendors/modules/angular-bootstrap-nav-tree/abn_tree.css').default
         ]
       },
       {
         name: 'toaster',
         files: [
-          require('../vendors/angularjs-toaster/toaster.js').default,
-          require('../vendors/angularjs-toaster/toaster.css').default
+          require('../vendors/modules/angularjs-toaster/toaster.js').default,
+          require('../vendors/modules/angularjs-toaster/toaster.css').default
         ]
-      }
+      },
+      {
+        name: 'angularFileUpload',
+        files: [
+          require('../vendors/modules/angular-file-upload/angular-file-upload.min.js').default
+        ]
+      },
+      {
+        name: 'ngImgCrop',
+        files: [
+          require('../vendors/modules/ngImgCrop/ng-img-crop.js').default,
+          require('../vendors/modules/ngImgCrop/ng-img-crop.css').default
+        ]
+      },
+      {
+        name: 'textAngular',
+        files: [
+          require('../vendors/modules/textAngular/textAngular-sanitize.min.js').default,
+          require('../vendors/modules/textAngular/textAngular.min.js').default
+        ]
+      },
     ]
   });
 }];

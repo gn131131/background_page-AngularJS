@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-02-11 16:13:25
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-11 18:06:47
+ * @LastEditTime: 2020-03-20 17:42:30
  */
 const path = require("path");
 const webpack = require("webpack");
@@ -84,7 +84,8 @@ module.exports = {
     extensions: ['*', '.js']
   },
   externals: {
-    'angular': 'angular'
+    angular: 'angular',
+    jQuery: 'jQuery'
   },
   plugins: [
     new ExtractTextPlugin({ filename: 'assets/styles/[name].css', allChunks: true }),
