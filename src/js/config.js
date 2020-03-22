@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-03-03 19:50:27
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-20 18:12:41
+ * @LastEditTime: 2020-03-22 16:22:18
  */
 const config = ['$locationProvider', '$ocLazyLoadProvider', '$httpProvider', ($locationProvider, $ocLazyLoadProvider, $httpProvider) => {
   $locationProvider.html5Mode(true);
@@ -64,6 +64,13 @@ const config = ['$locationProvider', '$ocLazyLoadProvider', '$httpProvider', ($l
         files: [
           require('../vendors/modules/ngImgCrop/ng-img-crop.js').default,
           require('../vendors/modules/ngImgCrop/ng-img-crop.css').default
+        ]
+      },
+      {
+        name: 'ui.select',
+        files: [
+          require('../vendors/modules/angular-ui-select/select.min.js').default,
+          require('../vendors/modules/angular-ui-select/select.min.css').default
         ]
       },
       {

@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-03-03 18:23:06
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-20 18:19:31
+ * @LastEditTime: 2020-03-22 16:18:36
  */
 const ocLazyLoadFn = ($ocLazyLoad, urls, modules, vendors) => {
   let arr = [];
@@ -235,13 +235,8 @@ const router = ['$urlRouterProvider', '$stateProvider', ($urlRouterProvider, $st
       template: require('./controllers/app/form/select/select.template.html').default,
       controller: 'SelectCtrl',
       resolve: {
-        deps: ['$ocLazyLoad', 'uiLoad', ($ocLazyLoad, uiLoad) => {
-          return uiLoad.load([
-            'https://cdn.staticfile.org/angular-ui-select/0.8.3/select.min.js',
-            'https://cdn.staticfile.org/angular-ui-select/0.8.3/select.min.css'
-          ]).then(() => {
-            return ocLazyLoadFn($ocLazyLoad, ['./controllers/app/form/select/select']);
-          });
+        deps: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return ocLazyLoadFn($ocLazyLoad, ['./controllers/app/form/select/select'], ['ui.select']);
         }]
       }
     })
