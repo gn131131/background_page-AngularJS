@@ -9,17 +9,7 @@
 const jqConfig = {
   easyPieChart: ['https://cdn.staticfile.org/easy-pie-chart/1.2.5/jquery.easy-pie-chart.js'],
   sparkline: ['https://cdn.staticfile.org/jquery-sparklines/2.1.2/jquery.sparkline.min.js'],
-  plot: ['https://cdn.staticfile.org/flot/0.8.1/jquery.flot.min.js',
-    'https://cdn.staticfile.org/flot/0.8.1/jquery.flot.resize.min.js',
-    'https://cdn.staticfile.org/flot.tooltip/0.8.3/jquery.flot.tooltip.min.js',
-    'https://cdn.staticfile.org/flot/0.8.3/jquery.flot.threshold.min.js',
-    'https://cdn.staticfile.org/flot/0.8.3/jquery.flot.symbol.min.js',
-    'https://cdn.staticfile.org/flot/0.8.3/jquery.flot.stack.min.js',
-    'https://cdn.staticfile.org/flot/0.8.3/jquery.flot.selection.min.js',
-    'https://cdn.staticfile.org/flot/0.8.3/jquery.flot.navigate.min.js',
-    'https://cdn.staticfile.org/flot/0.8.3/jquery.flot.errorbars.min.js',
-    'https://cdn.staticfile.org/flot/0.8.3/jquery.flot.pie.min.js'
-  ],
+  plot: [],
   slimScroll: ['https://cdn.staticfile.org/jQuery-slimScroll/1.3.8/jquery.slimscroll.min.js'],
   sortable: [],
   nestable: ['https://cdn.staticfile.org/nestable2/1.6.0/jquery.nestable.min.js',

@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-03-03 18:23:06
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-23 14:40:41
+ * @LastEditTime: 2020-03-23 19:06:46
  */
 const ocLazyLoadFn = ($ocLazyLoad, urls, modules, vendors) => {
   let arr = [];
@@ -34,12 +34,20 @@ const ocLazyLoadFn = ($ocLazyLoad, urls, modules, vendors) => {
           $ocLazyLoad.load({
             name: module.default.name
           });
-          resolve(module.default.controller);
+          resolve();
         });
       }));
     });
   }
-  return Promise.all(arr);
+  let initialPromise = Promise.resolve([]);
+  let chainedPromise = arr.reduce((pre, item) => {
+    return pre.then(() => {
+      return item.then(() => {
+      });
+    });
+  }, initialPromise);
+  return chainedPromise;
+  // return Promise.all(arr);
 };
 
 const router = ['$urlRouterProvider', '$stateProvider', ($urlRouterProvider, $stateProvider) => {
@@ -66,15 +74,41 @@ const router = ['$urlRouterProvider', '$stateProvider', ($urlRouterProvider, $st
       url: '/app',
       template: require('./controllers/app/app.template.html').default
     })
+    // dashboard
     .state('app.dashboard', {
       url: '/dashboard',
       template: require('./controllers/app/dashboard/dashboard.template.html').default,
       resolve: {
         deps: ['$ocLazyLoad', ($ocLazyLoad) => {
-          return ocLazyLoadFn($ocLazyLoad, ['./controllers/app/dashboard/dashboard']);
+          return ocLazyLoadFn($ocLazyLoad, ['./controllers/app/dashboard/dashboard'], [],
+            ['charts/flot/jquery.flot.min.js',
+              'charts/flot/jquery.flot.resize.js',
+              'charts/flot/jquery.flot.tooltip.min.js',
+              'charts/flot/jquery.flot.spline.js',
+              'charts/flot/jquery.flot.orderBars.js',
+              'charts/flot/jquery.flot.pie.min.js'
+            ]);
         }]
       }
     })
+    // chart
+    .state('app.chart', {
+      url: '/chart',
+      template: require('./controllers/app/chart/chart.template.html').default,
+      resolve: {
+        deps: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return ocLazyLoadFn($ocLazyLoad, ['./controllers/app/chart/chart'], [],
+            ['charts/flot/jquery.flot.min.js',
+              'charts/flot/jquery.flot.resize.js',
+              'charts/flot/jquery.flot.tooltip.min.js',
+              'charts/flot/jquery.flot.spline.js',
+              'charts/flot/jquery.flot.orderBars.js',
+              'charts/flot/jquery.flot.pie.min.js'
+            ]);
+        }]
+      }
+    })
+    // apps
     .state('apps', {
       abstract: true,
       url: '/apps',
