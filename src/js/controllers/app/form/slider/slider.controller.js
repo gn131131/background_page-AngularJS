@@ -8,12 +8,13 @@
  */
 export default angular.module('app.form.slider.controller', [])
   .controller('SliderCtrl', function ($scope) {
-    $scope.cost = 40;
-    $scope.range = {
-      min: 30,
-      max: 60
+    $scope.slider = {
+      min: 10,
+      max: 60,
+      value: 40,
+      options: {
+        floor: 0,
+        ceil: 100
+      }
     };
-    $scope.currencyFormatting = function (value) {
-      return "$" + value.toString();
-    }
   });

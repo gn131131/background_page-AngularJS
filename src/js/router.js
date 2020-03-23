@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-03-03 18:23:06
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-23 09:59:35
+ * @LastEditTime: 2020-03-23 14:40:41
  */
 const ocLazyLoadFn = ($ocLazyLoad, urls, modules, vendors) => {
   let arr = [];
@@ -246,7 +246,7 @@ const router = ['$urlRouterProvider', '$stateProvider', ($urlRouterProvider, $st
       controller: 'SliderCtrl',
       resolve: {
         deps: ['$ocLazyLoad', ($ocLazyLoad) => {
-          return ocLazyLoadFn($ocLazyLoad, ['./controllers/app/form/slider/slider']);
+          return ocLazyLoadFn($ocLazyLoad, ['./controllers/app/form/slider/slider'], ['rzSlider']);
         }]
       }
     })

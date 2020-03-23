@@ -80,6 +80,13 @@ const config = ['$locationProvider', '$ocLazyLoadProvider', '$httpProvider', ($l
           require('../vendors/modules/textAngular/textAngular.min.js').default
         ]
       },
+      {
+        name: 'rzSlider',
+        files: [
+          require('../vendors/modules/angularjs-slider/rzslider.min.js').default,
+          require('../vendors/modules/angularjs-slider/rzslider.min.css').default
+        ]
+      },
     ]
   });
 }];
