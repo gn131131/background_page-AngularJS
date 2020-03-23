@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-03-03 19:50:27
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-22 16:22:18
+ * @LastEditTime: 2020-03-23 09:55:21
  */
 const config = ['$locationProvider', '$ocLazyLoadProvider', '$httpProvider', ($locationProvider, $ocLazyLoadProvider, $httpProvider) => {
   $locationProvider.html5Mode(true);
