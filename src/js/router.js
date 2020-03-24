@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-03-03 18:23:06
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-23 19:06:46
+ * @LastEditTime: 2020-03-24 12:39:59
  */
 const ocLazyLoadFn = ($ocLazyLoad, urls, modules, vendors) => {
   let arr = [];
@@ -47,7 +47,6 @@ const ocLazyLoadFn = ($ocLazyLoad, urls, modules, vendors) => {
     });
   }, initialPromise);
   return chainedPromise;
-  // return Promise.all(arr);
 };
 
 const router = ['$urlRouterProvider', '$stateProvider', ($urlRouterProvider, $stateProvider) => {
@@ -80,14 +79,7 @@ const router = ['$urlRouterProvider', '$stateProvider', ($urlRouterProvider, $st
       template: require('./controllers/app/dashboard/dashboard.template.html').default,
       resolve: {
         deps: ['$ocLazyLoad', ($ocLazyLoad) => {
-          return ocLazyLoadFn($ocLazyLoad, ['./controllers/app/dashboard/dashboard'], [],
-            ['charts/flot/jquery.flot.min.js',
-              'charts/flot/jquery.flot.resize.js',
-              'charts/flot/jquery.flot.tooltip.min.js',
-              'charts/flot/jquery.flot.spline.js',
-              'charts/flot/jquery.flot.orderBars.js',
-              'charts/flot/jquery.flot.pie.min.js'
-            ]);
+          return ocLazyLoadFn($ocLazyLoad, ['./controllers/app/dashboard/dashboard']);
         }]
       }
     })
@@ -97,14 +89,7 @@ const router = ['$urlRouterProvider', '$stateProvider', ($urlRouterProvider, $st
       template: require('./controllers/app/chart/chart.template.html').default,
       resolve: {
         deps: ['$ocLazyLoad', ($ocLazyLoad) => {
-          return ocLazyLoadFn($ocLazyLoad, ['./controllers/app/chart/chart'], [],
-            ['charts/flot/jquery.flot.min.js',
-              'charts/flot/jquery.flot.resize.js',
-              'charts/flot/jquery.flot.tooltip.min.js',
-              'charts/flot/jquery.flot.spline.js',
-              'charts/flot/jquery.flot.orderBars.js',
-              'charts/flot/jquery.flot.pie.min.js'
-            ]);
+          return ocLazyLoadFn($ocLazyLoad, ['./controllers/app/chart/chart']);
         }]
       }
     })

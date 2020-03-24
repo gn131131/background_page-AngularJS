@@ -8,7 +8,7 @@
  */
 const run = ['$templateCache', '$rootScope', '$state', '$stateParams', ($templateCache, $rootScope, $state, $stateParams) => {
   $rootScope.$state = $state;
-  $rootScope.$stateParams = $stateParams;  
+  $rootScope.$stateParams = $stateParams;
 
   $templateCache.put('header.html', require('../templates/header.html').default);
   $templateCache.put('aside.html', require('../templates/aside.html').default);

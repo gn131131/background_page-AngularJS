@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-03-11 19:54:18
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-20 17:21:30
+ * @LastEditTime: 2020-03-24 12:38:15
  */
 'use strict';
 
@@ -24,7 +24,6 @@
  *
  * @example <input ui-jq="datepicker" ui-options="{showOn:'click'},secondParameter,thirdParameter" ui-refresh="iChange">
  */
-
 const uiJq = ['uiJqConfig', 'JQ_CONFIG', 'uiLoad', '$timeout', function uiJqInjectingFunction(uiJqConfig, JQ_CONFIG, uiLoad, $timeout) {
 
   return {
@@ -75,7 +74,6 @@ const uiJq = ['uiJqConfig', 'JQ_CONFIG', 'uiLoad', '$timeout', function uiJqInje
             });
           }
         }
-
         if ( JQ_CONFIG[attrs.uiJq] ) {
           uiLoad.load(JQ_CONFIG[attrs.uiJq]).then(function(e) {
             callPlugin();

@@ -4,12 +4,19 @@
  * @Autor: Pumpking
  * @Date: 2020-03-12 14:16:47
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-20 15:20:47
+ * @LastEditTime: 2020-03-24 12:54:21
  */
 const jqConfig = {
-  easyPieChart: ['https://cdn.staticfile.org/easy-pie-chart/1.2.5/jquery.easy-pie-chart.js'],
+  easyPieChart: ['https://cdn.staticfile.org/easy-pie-chart/1.2.5/jquery.easy-pie-chart.js',
+    'https://cdn.staticfile.org/easy-pie-chart/1.2.5/jquery.easy-pie-chart.css'
+  ],
   sparkline: ['https://cdn.staticfile.org/jquery-sparklines/2.1.2/jquery.sparkline.min.js'],
-  plot: [],
+  plot: [
+    'https://cdn.staticfile.org/flot/0.8.3/jquery.flot.min.js',
+    'https://cdn.staticfile.org/flot/0.8.3/jquery.flot.resize.min.js',
+    'https://cdn.staticfile.org/flot/0.8.3/jquery.flot.pie.min.js',
+    'https://cdn.staticfile.org/flot.tooltip/0.8.3/jquery.flot.tooltip.min.js'
+  ],
   slimScroll: ['https://cdn.staticfile.org/jQuery-slimScroll/1.3.8/jquery.slimscroll.min.js'],
   sortable: [],
   nestable: ['https://cdn.staticfile.org/nestable2/1.6.0/jquery.nestable.min.js',
