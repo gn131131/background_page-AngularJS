@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-03-03 18:23:06
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-24 12:39:59
+ * @LastEditTime: 2020-03-24 16:41:49
  */
 const ocLazyLoadFn = ($ocLazyLoad, urls, modules, vendors) => {
   let arr = [];
@@ -12,7 +12,7 @@ const ocLazyLoadFn = ($ocLazyLoad, urls, modules, vendors) => {
     vendors.map(item => {
       arr.push(new Promise((resolve) => {
         import(`../vendors/jquery/${item}`).then(() => {
-          resolve();
+          resolve(item);
         });
       }));
     });
@@ -22,8 +22,9 @@ const ocLazyLoadFn = ($ocLazyLoad, urls, modules, vendors) => {
       arr.push(new Promise((resolve) => {
         $ocLazyLoad.load({
           name: item
+        }).then(() => {
+          resolve(item);
         });
-        resolve();
       }));
     });
   }
@@ -33,16 +34,18 @@ const ocLazyLoadFn = ($ocLazyLoad, urls, modules, vendors) => {
         import(`${item}`).then(module => {
           $ocLazyLoad.load({
             name: module.default.name
+          }).then(() => {
+            resolve(module.default.name);
           });
-          resolve();
         });
       }));
     });
   }
   let initialPromise = Promise.resolve([]);
-  let chainedPromise = arr.reduce((pre, item) => {
-    return pre.then(() => {
-      return item.then(() => {
+  let chainedPromise = arr.reduce((pre, cur) => {
+    return pre.then((preResolve) => {
+      return cur.then((curResolve) => {
+        console.log('load Module: ', curResolve);
       });
     });
   }, initialPromise);
@@ -80,6 +83,27 @@ const router = ['$urlRouterProvider', '$stateProvider', ($urlRouterProvider, $st
       resolve: {
         deps: ['$ocLazyLoad', ($ocLazyLoad) => {
           return ocLazyLoadFn($ocLazyLoad, ['./controllers/app/dashboard/dashboard']);
+        }]
+      }
+    })
+    // fullCalendar
+    .state('app.calendar', {
+      url: '/calendar',
+      template: require('./controllers/app/calendar/calendar.template.html').default,
+      resolve: {
+        deps: ['$ocLazyLoad', 'uiLoad', ($ocLazyLoad, uiLoad) => {
+          return uiLoad.load([
+            'https://cdn.staticfile.org/moment.js/2.24.0/moment.min.js',
+            'https://cdn.staticfile.org/moment.js/2.24.0/locale/zh-cn.js',
+            'https://cdn.staticfile.org/fullcalendar/2.1.1/fullcalendar.min.js',
+            'https://cdn.staticfile.org/fullcalendar/2.1.1/gcal.js',
+            'https://cdn.staticfile.org/fullcalendar/2.1.1/lang/zh-cn.js'
+          ]).then(() => {
+            return ocLazyLoadFn($ocLazyLoad, ['./controllers/app/calendar/calendar'], ['ui.calendar'],
+              ['fullcalendar/fullcalendar.css',
+                'fullcalendar/theme.css'
+              ]);
+          });
         }]
       }
     })

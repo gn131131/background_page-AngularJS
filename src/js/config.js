@@ -87,6 +87,12 @@ const config = ['$locationProvider', '$ocLazyLoadProvider', '$httpProvider', ($l
           require('../vendors/modules/angularjs-slider/rzslider.min.css').default
         ]
       },
+      {
+        name:'ui.calendar',
+        files: [
+          require('../vendors/modules/angular-ui-calendar/calendar.js').default
+        ]
+      }
     ]
   });
 }];
