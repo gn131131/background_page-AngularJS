@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-03-03 19:59:49
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-19 15:31:20
+ * @LastEditTime: 2020-03-24 17:01:40
  */
 const webpack = require("webpack");
 const UglifyJSPlugin = require("uglifyjs-webpack-plugin");

@@ -1744,8 +1744,8 @@ body {
 .btn-default.active,
 .open .dropdown-toggle.btn-default {
   color: #58666e !important;
-  background-color: #edf1f2;
-  border-color: #c7d3d6;
+  background-color: #edf1f2!important;
+  border-color: #c7d3d6!important;
 }
 
 .btn-default:active,

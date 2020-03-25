@@ -56,6 +56,7 @@ const router = ['$urlRouterProvider', '$stateProvider', ($urlRouterProvider, $st
   $urlRouterProvider.otherwise('/access/login');
 
   $stateProvider
+    // access
     .state('access', {
       url: '/access',
       template: '<div ui-view class="fade-in-right-big smooth"></div>'
@@ -71,6 +72,24 @@ const router = ['$urlRouterProvider', '$stateProvider', ($urlRouterProvider, $st
         }]
       }
     })
+    .state('access.signup', {
+      url: '/signup',
+      template: require('./controllers/access/signup/signup.template.html').default,
+      resolve: {
+        deps: ['$ocLazyLoad', ($ocLazyLoad) => {
+          return ocLazyLoadFn($ocLazyLoad, ['./controllers/access/signup/signup']);
+        }]
+      }
+    })
+    .state('access.forgotpwd', {
+      url: '/forgotpwd',
+      template: require('./controllers/access/forgotpwd/forgotpwd.template.html').default
+    })
+    .state('lockme', {
+      url: '/lockme',
+      template: require('./controllers/access/lockme/lockme.template.html').default
+    })
+    // app
     .state('app', {
       abstract: true,
       url: '/app',
@@ -302,6 +321,31 @@ const router = ['$urlRouterProvider', '$stateProvider', ($urlRouterProvider, $st
           return ocLazyLoadFn($ocLazyLoad, ['./controllers/app/form/editor/editor'], ['textAngular']);
         }]
       }
+    })
+    // pages
+    .state('app.page', {
+      url: '/page',
+      template: '<div ui-view class="fade-in-down"></div>'
+    })
+    .state('app.page.profile', {
+      url: '/profile',
+      template: require('./controllers/app/page/profile/profile.template.html').default
+    })
+    .state('app.page.post', {
+      url: '/post',
+      template: require('./controllers/app/page/post/post.template.html').default
+    })
+    .state('app.page.search', {
+      url: '/search',
+      template: require('./controllers/app/page/search/search.template.html').default
+    })
+    .state('app.page.price', {
+      url: '/price',
+      template: require('./controllers/app/page/price/price.template.html').default
+    })
+    .state('app.docs', {
+      url: '/docs',
+      template: require('../templates/docs.html').default
     })
 }];
 
