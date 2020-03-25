@@ -1,14 +1,22 @@
+<!--
+ * @Description: 
+ * @Version: 1.0
+ * @Autor: Pumpking
+ * @Date: 2020-03-20 16:31:06
+ * @LastEditors: Pumpking
+ * @LastEditTime: 2020-03-25 18:31:01
+ -->
 <div class="bg-light lter b-b wrapper-md">
   <h1 class="m-n font-thin h3">滑杆</h1>
 </div>
 <div class="wrapper-md">
-  <p>Single: ( {{slider.value}} )</p>
+  <p>单个: ( {{slider.value}} )</p>
   <rzslider
     rz-slider-model="slider.value"
     rz-slider-options="slider.options"
   >
   </rzslider>
-  <p>Multiple: ( min:{{slider.min}} - max:{{slider.max}} )</p>
+  <p>范围: ( 最小：{{slider.min}} - 最大：{{slider.max}} )</p>
   <rzslider
     rz-slider-model="slider.min"
     rz-slider-high="slider.max"

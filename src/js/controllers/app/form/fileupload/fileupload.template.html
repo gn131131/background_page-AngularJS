@@ -1,3 +1,11 @@
+<!--
+ * @Description: 
+ * @Version: 1.0
+ * @Autor: Pumpking
+ * @Date: 2020-03-20 16:31:06
+ * @LastEditors: Pumpking
+ * @LastEditTime: 2020-03-25 18:20:53
+ -->
 <div class="hbox hbox-auto-xs hbox-auto-sm" ng-controller="FileUploadCtrl"  nv-file-drop="" uploader="uploader" filters="queueLimit, customFilter">
   <div class="col w-lg bg-light b-r bg-auto">
     <div class="wrapper-md dker b-b">
@@ -7,39 +15,39 @@
       <div ng-show="uploader.isHTML5" class="m-b-md">
           <!-- 3. nv-file-over uploader="link" over-class="className" -->
           <div class="b-a b-2x b-dashed wrapper-lg bg-white text-center m-b" nv-file-over="" over-class="b-info" uploader="uploader">
-              Base drop zone
+              基础拖拽上传区域
           </div>
 
           <!-- Example: nv-file-drop="" uploader="{Object}" options="{Object}" filters="{String}" -->
           <div nv-file-drop="" uploader="uploader" options="{ url: '/foo' }">
               <div nv-file-over="" uploader="uploader" over-class="b-danger" class="b-a b-2x b-dashed wrapper-lg lter text-center">
-                  Another drop zone with its own settings
+                  带设置的拖拽上传区域
               </div>
           </div>
       </div>
 
       <!-- Example: nv-file-select="" uploader="{Object}" options="{Object}" filters="{String}" -->
-      <p>Multiple</p>
+      <p>多文件</p>
       <input type="file" nv-file-select="" uploader="uploader" multiple  />
 
-      <p class="m-t-md">Single</p>
+      <p class="m-t-md">单文件</p>
       <input type="file" nv-file-select="" uploader="uploader" />
     </div>
   </div>
   <div class="col">
     <div class="wrapper-md bg-light dk b-b">
-      <span class="pull-right m-t-xs">Queue length: <b class="badge bg-info">{{ uploader.queue.length }}</b></span>
-      <h3 class="m-n font-thin">Upload queue</h3>      
+      <span class="pull-right m-t-xs">上传队列个数 <b class="badge bg-info">{{ uploader.queue.length }}</b></span>
+      <h3 class="m-n font-thin">上传队列</h3>      
     </div>
     <div class="wrapper-md">
       <table class="table bg-white-only b-a">
           <thead>
               <tr>
-                  <th width="50%">Name</th>
-                  <th ng-show="uploader.isHTML5">Size</th>
-                  <th ng-show="uploader.isHTML5">Progress</th>
-                  <th>Status</th>
-                  <th>Actions</th>
+                  <th width="50%">文件名</th>
+                  <th ng-show="uploader.isHTML5">大小</th>
+                  <th ng-show="uploader.isHTML5">进度</th>
+                  <th>状态</th>
+                  <th>操作</th>
               </tr>
           </thead>
           <tbody>
@@ -58,13 +66,13 @@
                   </td>
                   <td nowrap>
                       <button type="button" class="btn btn-default btn-xs" ng-click="item.upload()" ng-disabled="item.isReady || item.isUploading || item.isSuccess">
-                          Upload
+                          上传
                       </button>
                       <button type="button" class="btn btn-default btn-xs" ng-click="item.cancel()" ng-disabled="!item.isUploading">
-                          Cancel
+                          取消
                       </button>
                       <button type="button" class="btn btn-default btn-xs" ng-click="item.remove()">
-                          Remove
+                          删除
                       </button>
                   </td>
               </tr>
@@ -72,21 +80,21 @@
       </table>
       <div>
         <div>
-          <p>Queue progress:</p>
-          <div class="progress bg-light dker" style="">
+          <p>上传进度：</p>
+          <div class="progress bg-light dker">
               <div class="progress-bar progress-bar-striped bg-info" role="progressbar" ng-style="{ 'width': uploader.progress + '%' }"></div>
           </div>
         </div>
         <button type="button" class="btn btn-addon btn-success" ng-click="uploader.uploadAll()" ng-disabled="!uploader.getNotUploadedItems().length">
-          <i class="fa fa-arrow-circle-o-up"></i> Upload all
+          <i class="fa fa-arrow-circle-o-up"></i> 上传全部
         </button>
         <button type="button" class="btn btn-addon btn-warning" ng-click="uploader.cancelAll()" ng-disabled="!uploader.isUploading">
-          <i class="fa fa-ban"></i> Cancel all
+          <i class="fa fa-ban"></i> 取消全部
         </button>
         <button type="button" class="btn btn-addon btn-danger" ng-click="uploader.clearQueue()" ng-disabled="!uploader.queue.length">
-            <i class="fa fa-trash-o"></i> Remove all
+            <i class="fa fa-trash-o"></i> 删除全部
         </button>
-        <p class="text-muted m-t-xl">Note: upload.php file included, files will be uploaded to "src/js/controllers/uploads".</p>
+        <p class="text-muted m-t-xl">提示: 上传文件到upload.php（文件暂不存在）</p>
       </div>
     </div>
   </div>

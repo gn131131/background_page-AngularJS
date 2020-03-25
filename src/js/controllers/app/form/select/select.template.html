@@ -5,7 +5,7 @@
   <form class="form-horizontal">
     <fieldset>
       <div class="form-group">
-        <label class="col-sm-3 control-label text-left">Address</label>
+        <label class="col-sm-3 control-label text-left">地址（地址服务器为google）</label>
         <div class="col-sm-6">
 
           <ui-select ng-model="address.selected"
@@ -13,7 +13,7 @@
                      ng-disabled="disabled"
                      reset-search-input="false"
                      style="width: 300px;">
-            <ui-select-match class="ui-select-match" placeholder="Enter an address...">{{$select.selected.formatted_address}}</ui-select-match>
+            <ui-select-match class="ui-select-match" placeholder="输入地址...">{{$select.selected.formatted_address}}</ui-select-match>
             <ui-select-choices class="ui-select-choices" repeat="address in addresses track by $index"
                      refresh="refreshAddresses($select.search)"
                      refresh-delay="0">
@@ -24,11 +24,11 @@
         </div>
       </div>
       <div class="form-group">
-        <label class="col-sm-3 control-label text-left">Default</label>
+        <label class="col-sm-3 control-label text-left">默认</label>
         <div class="col-sm-6">
 
           <ui-select ng-model="person.selected" theme="bootstrap">
-            <ui-select-match class="ui-select-match" placeholder="Select or search a person in the list...">{{$select.selected.name}}</ui-select-match>
+            <ui-select-match class="ui-select-match" placeholder="选择或搜索...">{{$select.selected.name}}</ui-select-match>
             <ui-select-choices class="ui-select-choices" repeat="item in people | filter: $select.search">
               <div ng-bind-html="item.name | highlight: $select.search"></div>
               <small ng-bind-html="item.email | highlight: $select.search"></small>
@@ -39,11 +39,11 @@
       </div>
 
       <div class="form-group">
-        <label class="col-sm-3 control-label text-left">Grouped</label>
+        <label class="col-sm-3 control-label text-left">分组</label>
         <div class="col-sm-6">
 
           <ui-select ng-model="person.selected" theme="bootstrap">
-            <ui-select-match class="ui-select-match" placeholder="Select or search a person in the list...">{{$select.selected.name}}</ui-select-match>
+            <ui-select-match class="ui-select-match" placeholder="选择或搜索...">{{$select.selected.name}}</ui-select-match>
             <ui-select-choices class="ui-select-choices" group-by="'group'" repeat="item in people | filter: $select.search">
               <span ng-bind-html="item.name | highlight: $select.search"></span>
               <small ng-bind-html="item.email | highlight: $select.search"></small>
@@ -54,11 +54,11 @@
       </div>
 
       <div class="form-group">
-        <label class="col-sm-3 control-label text-left">Grouped using a string</label>
+        <label class="col-sm-3 control-label text-left">通过字符串分组</label>
         <div class="col-sm-6">
 
           <ui-select ng-model="person.selected" theme="bootstrap" ng-disabled="disabled" style="min-width: 300px;">
-            <ui-select-match class="ui-select-match" placeholder="Select a person in the list or search his name/age...">{{$select.selected.name}}</ui-select-match>
+            <ui-select-match class="ui-select-match" placeholder="选择或搜索...">{{$select.selected.name}}</ui-select-match>
             <ui-select-choices class="ui-select-choices" group-by="'country'" repeat="person in people | propsFilter: {name: $select.search, age: $select.search}">
               <div ng-bind-html="person.name | highlight: $select.search"></div>
               <small>
@@ -72,11 +72,11 @@
       </div>
 
       <div class="form-group">
-        <label class="col-sm-3 control-label text-left">Group using a function</label>
+        <label class="col-sm-3 control-label text-left">通过函数分组</label>
         <div class="col-sm-6">
 
           <ui-select ng-model="person.selected" theme="bootstrap" ng-disabled="disabled" style="min-width: 300px;">
-            <ui-select-match class="ui-select-match" placeholder="Select a person in the list or search his name/age...">{{$select.selected.name}}</ui-select-match>
+            <ui-select-match class="ui-select-match" placeholder="选择或搜索...">{{$select.selected.name}}</ui-select-match>
             <ui-select-choices class="ui-select-choices" group-by="someGroupFn" repeat="person in people | propsFilter: {name: $select.search, age: $select.search}">
               <div ng-bind-html="person.name | highlight: $select.search"></div>
               <small>
@@ -90,12 +90,12 @@
       </div>        
 
       <div class="form-group">
-        <label class="col-sm-3 control-label text-left">With a clear button</label>
+        <label class="col-sm-3 control-label text-left">删除按钮添加</label>
         <div class="col-sm-6">
           <div class="input-group">
 
             <ui-select ng-model="person.selected" theme="bootstrap">
-              <ui-select-match class="ui-select-match" placeholder="Select or search a person in the list...">{{$select.selected.name}}</ui-select-match>
+              <ui-select-match class="ui-select-match" placeholder="选择或搜索...">{{$select.selected.name}}</ui-select-match>
               <ui-select-choices class="ui-select-choices" repeat="item in people | filter: $select.search">
                 <span ng-bind-html="item.name | highlight: $select.search"></span>
                 <small ng-bind-html="item.email | highlight: $select.search"></small>
@@ -113,11 +113,11 @@
       </div>
 
       <div class="form-group">
-        <label class="col-sm-3 control-label text-left">Multiple</label>
+        <label class="col-sm-3 control-label text-left">多选</label>
         <div class="col-sm-6">
 
           <ui-select multiple ng-model="multipleDemo.selectedPeopleWithGroupBy" theme="bootstrap" ng-disabled="disabled">
-            <ui-select-match class="ui-select-match" placeholder="Select person...">{{$item.name}} &lt;{{$item.email}}&gt;</ui-select-match>
+            <ui-select-match class="ui-select-match" placeholder="选择...">{{$item.name}} &lt;{{$item.email}}&gt;</ui-select-match>
             <ui-select-choices class="ui-select-choices" group-by="someGroupFn" repeat="person in people | propsFilter: {name: $select.search, age: $select.search}">
               <div ng-bind-html="person.name | highlight: $select.search"></div>
               <small>
@@ -131,11 +131,11 @@
       </div>
 
       <div class="form-group">
-        <label class="col-sm-3 control-label text-left">Disabled</label>
+        <label class="col-sm-3 control-label text-left">禁用</label>
         <div class="col-sm-6">
 
           <ui-select ng-model="person.selected" theme="bootstrap" ng-disabled="true">
-            <ui-select-match class="ui-select-match" placeholder="Select or search a person in the list...">{{$select.selected.name}}</ui-select-match>
+            <ui-select-match class="ui-select-match" placeholder="选择或搜索...">{{$select.selected.name}}</ui-select-match>
             <ui-select-choices class="ui-select-choices" repeat="item in people | filter: $select.search">
               <div ng-bind-html="item.name | highlight: $select.search"></div>
               <small ng-bind-html="item.email | highlight: $select.search"></small>
