@@ -10,91 +10,91 @@ export default angular.module('app.calendar.controller', [])
     var y = date.getFullYear();
 
     /* event source that pulls from google.com */
-    $scope.eventSource = {
-      url: "http://www.google.com/calendar/feeds/usa__en%40holiday.calendar.google.com/public/basic",
-      className: 'gcal-event', // an option!
-      currentTimezone: 'America/Chicago' // an option!
-    };
+    // $scope.eventSource = {
+    //   url: "http://www.google.com/calendar/feeds/usa__en%40holiday.calendar.google.com/public/basic",
+    //   className: 'gcal-event', // an option!
+    //   currentTimezone: 'America/Chicago' // an option!
+    // };
 
     /* event source that contains custom events on the scope */
     $scope.events = [{
-        title: 'All Day Event',
+        title: '全天事件',
         start: new Date(y, m, 1),
         className: ['b-l b-2x b-info'],
-        location: 'New York',
-        info: 'This a all day event that will start from 9:00 am to 9:00 pm, have fun!'
+        location: '武汉',
+        info: '这是一个全天事件'
       },
       {
-        title: 'Dance class',
+        title: '舞蹈课',
         start: new Date(y, m, 3),
         end: new Date(y, m, 4, 9, 30),
         allDay: false,
         className: ['b-l b-2x b-danger'],
-        location: 'London',
-        info: 'Two days dance training class.'
+        location: '香港',
+        info: '两节舞蹈课'
       },
       {
-        title: 'Game racing',
+        title: 'LPL',
         start: new Date(y, m, 6, 16, 0),
         className: ['b-l b-2x b-info'],
-        location: 'Hongkong',
-        info: 'The most big racing of this year.'
+        location: '台湾',
+        info: '今年最大的一届比赛'
       },
       {
-        title: 'Soccer',
+        title: '踢足球',
         start: new Date(y, m, 8, 15, 0),
         className: ['b-l b-2x b-info'],
-        location: 'Rio',
-        info: 'Do not forget to watch.'
+        location: '澳门',
+        info: '别忘了'
       },
       {
-        title: 'Family',
+        title: '聚会',
         start: new Date(y, m, 9, 19, 30),
         end: new Date(y, m, 9, 20, 30),
         className: ['b-l b-2x b-success'],
-        info: 'Family party'
+        info: '家庭'
       },
       {
-        title: 'Long Event',
+        title: '长事件',
         start: new Date(y, m, d - 5),
         end: new Date(y, m, d - 2),
         className: ['bg-success bg'],
-        location: 'HD City',
-        info: 'It is a long long event'
+        location: '深圳',
+        info: '这是一个长事件'
       },
       {
-        title: 'Play game',
+        title: '玩游戏',
         start: new Date(y, m, d - 1, 16, 0),
         className: ['b-l b-2x b-info'],
-        location: 'Tokyo',
-        info: 'Tokyo Game Racing'
+        location: '东京',
+        info: '宝可梦'
       },
       {
-        title: 'Birthday Party',
+        title: '生日',
         start: new Date(y, m, d + 1, 19, 0),
         end: new Date(y, m, d + 1, 22, 30),
         allDay: false,
         className: ['b-l b-2x b-primary'],
-        location: 'New York',
-        info: 'Party all day'
+        location: '纽约',
+        info: '玩一整天'
       },
       {
-        title: 'Repeating Event',
+        title: '重复事件',
         start: new Date(y, m, d + 4, 16, 0),
         alDay: false,
         className: ['b-l b-2x b-warning'],
-        location: 'Home Town',
-        info: 'Repeat every day'
+        location: '巴黎',
+        info: '每日重复'
       },
       {
-        title: 'Click for Google',
+        title: '点击跳转百度',
         start: new Date(y, m, 28),
         end: new Date(y, m, 29),
-        url: 'http://google.com/',
+        url: 'http://www.baidu.com/',
         className: ['b-l b-2x b-primary']
       },
       {
-        title: 'Feed cat',
+        title: '喂猫',
         start: new Date(y, m + 1, 6, 18, 0),
         className: ['b-l b-2x b-info']
       }
@@ -107,7 +107,7 @@ export default angular.module('app.calendar.controller', [])
       var time = new Date().getTime();
       if (time - $scope.lastClickTime <= $scope.precision) {
         $scope.events.push({
-          title: 'New Event',
+          title: '新事件',
           start: date,
           className: ['b-l b-2x b-info']
         });
@@ -144,6 +144,7 @@ export default angular.module('app.calendar.controller', [])
     /* config object */
     $scope.uiConfig = {
       calendar: {
+        lang: 'zh-cn',
         height: 450,
         editable: true,
         header: {
@@ -161,7 +162,7 @@ export default angular.module('app.calendar.controller', [])
     /* add custom event*/
     $scope.addEvent = function () {
       $scope.events.push({
-        title: 'New Event',
+        title: '新事件',
         start: new Date(y, m, d),
         className: ['b-l b-2x b-info']
       });
