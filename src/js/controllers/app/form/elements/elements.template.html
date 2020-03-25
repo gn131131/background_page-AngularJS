@@ -5,57 +5,57 @@
   <div class="row">
     <div class="col-sm-6">
       <div class="panel panel-default">
-        <div class="panel-heading font-bold">Basic form</div>
+        <div class="panel-heading font-bold">基本表单</div>
         <div class="panel-body">
           <form role="form">
             <div class="form-group">
-              <label>Email address</label>
-              <input type="email" class="form-control" placeholder="Enter email">
+              <label>Email</label>
+              <input type="email" class="form-control" placeholder="请输入email">
             </div>
             <div class="form-group">
-              <label>Password</label>
-              <input type="password" class="form-control" placeholder="Password">
+              <label>密码</label>
+              <input type="password" class="form-control" placeholder="请输入密码">
             </div>
             <div class="checkbox">
               <label class="i-checks">
-                <input type="checkbox" checked disabled><i></i> Check me out
+                <input type="checkbox" checked disabled><i></i> 检查
               </label>
             </div>
-            <button type="submit" class="btn btn-sm btn-primary">Submit</button>
+            <button type="submit" class="btn btn-sm btn-primary">提交</button>
           </form>
         </div>
       </div>
     </div>
     <div class="col-sm-6">
       <div class="panel panel-default">
-        <div class="panel-heading font-bold">Horizontal form</div>
+        <div class="panel-heading font-bold">水平表单</div>
         <div class="panel-body">
           <form class="bs-example form-horizontal">
             <div class="form-group">
               <label class="col-lg-2 control-label">Email</label>
               <div class="col-lg-10">
-                <input type="email" class="form-control" placeholder="Email">
-                <span class="help-block m-b-none">Example block-level help text here.</span>
+                <input type="email" class="form-control" placeholder="请输入email">
+                <span class="help-block m-b-none">这里填写提醒文字</span>
               </div>
             </div>
             <div class="form-group">
-              <label class="col-lg-2 control-label">Password</label>
+              <label class="col-lg-2 control-label">密码</label>
               <div class="col-lg-10">
-                <input type="password" class="form-control" placeholder="Password">
+                <input type="password" class="form-control" placeholder="请输入密码">
               </div>
             </div>
             <div class="form-group">
               <div class="col-lg-offset-2 col-lg-10">
                 <div class="checkbox">
                   <label class="i-checks">
-                    <input type="checkbox" checked><i></i> Remember me
+                    <input type="checkbox" checked><i></i> 记住我
                   </label>
                 </div>
               </div>
             </div>
             <div class="form-group">
               <div class="col-lg-offset-2 col-lg-10">
-                <button type="submit" class="btn btn-sm btn-info">Sign in</button>
+                <button type="submit" class="btn btn-sm btn-info">登录</button>
               </div>
             </div>
           </form>
@@ -65,63 +65,63 @@
   </div>
   <div class="panel panel-default">
     <div class="panel-heading font-bold">                  
-      Inline form
+      整行表单
     </div>
     <div class="panel-body">
       <form class="form-inline" role="form">
         <div class="form-group">
-          <label class="sr-only" for="exampleInputEmail2">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
+          <label class="sr-only" for="exampleInputEmail2">Email地址</label>
+          <input type="email" class="form-control" id="exampleInputEmail2" placeholder="请输入email">
         </div>
         <div class="form-group">
-          <label class="sr-only" for="exampleInputPassword2">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
+          <label class="sr-only" for="exampleInputPassword2">密码</label>
+          <input type="password" class="form-control" id="exampleInputPassword2" placeholder="请输入密码">
         </div>
         <div class="checkbox m-l m-r-xs">
           <label class="i-checks">
-            <input type="checkbox"><i></i> Remember me
+            <input type="checkbox"><i></i> 记住我
           </label>
         </div>
-        <button type="submit" class="btn btn-default">Sign in</button>
+        <button type="submit" class="btn btn-default">登录</button>
         <span ng-controller="ModalDemoCtrl">
           <script type="text/ng-template" id="myModalContent.html">
-            <div ng-include="'tpl/modal.form.html'"></div>
+            <div ng-include="'modal.form.html'"></div>
           </script>
-          <button class="btn btn-success" ng-click="open('lg')">Form in a modal</button>
+          <button class="btn btn-success" ng-click="open('lg')">表单模态框</button>
         </span>
       </form>
     </div>
   </div>
   <div class="panel panel-default">
     <div class="panel-heading font-bold">
-      Form elements
+      表单元素
     </div>
     <div class="panel-body">
       <form class="form-horizontal" method="get">
         <div class="form-group">
-          <label class="col-sm-2 control-label">Rounded</label>
+          <label class="col-sm-2 control-label">圆角</label>
           <div class="col-sm-10">
             <input type="text" class="form-control rounded">                        
           </div>
         </div>
         <div class="line line-dashed b-b line-lg pull-in"></div>
         <div class="form-group">
-          <label class="col-sm-2 control-label">With help</label>
+          <label class="col-sm-2 control-label">带提示</label>
           <div class="col-sm-10">
             <input type="text" class="form-control">
-            <span class="help-block m-b-none">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+            <span class="help-block m-b-none">这里是提醒行文字，可根据情况修改</span>
           </div>
         </div>
         <div class="line line-dashed b-b line-lg pull-in"></div>
         <div class="form-group">
-          <label class="col-sm-2 control-label" for="input-id-1">Label focus</label>
+          <label class="col-sm-2 control-label" for="input-id-1">点击Label聚焦</label>
           <div class="col-sm-10">
             <input type="text" class="form-control" id="input-id-1">
           </div>
         </div>
         <div class="line line-dashed b-b line-lg pull-in"></div>
         <div class="form-group">
-          <label class="col-sm-2 control-label">Password</label>
+          <label class="col-sm-2 control-label">密码</label>
           <div class="col-sm-10">
             <input type="password" name="password" class="form-control">
           </div>
@@ -135,39 +135,39 @@
         </div>
         <div class="line line-dashed b-b line-lg pull-in"></div>
         <div class="form-group">
-          <label class="col-lg-2 control-label">Disabled</label>
+          <label class="col-lg-2 control-label">禁用</label>
           <div class="col-lg-10">
-            <input class="form-control" type="text" placeholder="Disabled input here..." disabled>
+            <input class="form-control" type="text" placeholder="禁用的输入内容" disabled>
           </div>
         </div>
         <div class="line line-dashed b-b line-lg pull-in"></div>
         <div class="form-group">
-          <label class="col-lg-2 control-label">Static control</label>
+          <label class="col-lg-2 control-label">静态内容</label>
           <div class="col-lg-10">
             <p class="form-control-static">email@example.com</p>
           </div>
         </div>                    
         <div class="line line-dashed b-b line-lg pull-in"></div>
         <div class="form-group">
-          <label class="col-sm-2 control-label">Checkboxes and radios</label>
+          <label class="col-sm-2 control-label">多选和单选</label>
           <div class="col-sm-10">
             <div class="checkbox">
               <label>
                 <input type="checkbox" value="">
-                Option one is this and that&mdash;be sure to include why it's great
+                多选1
               </label>
             </div>
 
             <div class="radio">
               <label>
                 <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                Option one is this and that&mdash;be sure to include why it's great
+                单选1
               </label>
             </div>
             <div class="radio">
               <label>
                 <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                Option two can be something else and selecting it will deselect option one
+                单选2
               </label>
             </div>
           </div>
@@ -175,7 +175,7 @@
 
         <div class="line line-dashed b-b line-lg pull-in"></div>
         <div class="form-group">
-          <label class="col-sm-2 control-label">Inline checkboxes</label>
+          <label class="col-sm-2 control-label">同行多选框</label>
           <div class="col-sm-10">
             <label class="checkbox-inline">
               <input type="checkbox" value="option1"> a
@@ -190,62 +190,62 @@
         </div>
         <div class="line line-dashed b-b line-lg pull-in"></div>
         <div class="form-group">
-          <label class="col-sm-2 control-label">CSS3 Checkboxes & radios</label>
+          <label class="col-sm-2 control-label">CSS3样式多选单选框</label>
           <div class="col-sm-10">
             <div class="checkbox">
               <label class="i-checks">
                 <input type="checkbox" value="">
                 <i></i>
-                Option one
+                选项1
               </label>
             </div>
             <div class="checkbox">
               <label class="i-checks">
                 <input type="checkbox" checked value="">
                 <i></i>
-                Option two checked
+                选项2选中
               </label>
             </div>
             <div class="checkbox">
               <label class="i-checks">
                 <input type="checkbox" checked disabled value="">
                 <i></i>
-                Option three checked and disabled
+                选项3选中且禁用
               </label>
             </div>
             <div class="checkbox">
               <label class="i-checks">
                 <input type="checkbox" disabled value="">
                 <i></i>
-                Option four disabled
+                选项4禁用
               </label>
             </div>
             <div class="radio">
               <label class="i-checks">
                 <input type="radio" name="a" value="option1">
                 <i></i>
-                Option one
+                选项1
               </label>
             </div>
             <div class="radio">
               <label class="i-checks">
                 <input type="radio" name="a" value="option2" checked>
                 <i></i>
-                Option two checked
+                选项2选中
               </label>
             </div>
             <div class="radio">
               <label class="i-checks">
                 <input type="radio" value="option2" checked disabled>
                 <i></i>
-                Option three checked and disabled
+                选项3选中和禁用
               </label>
             </div>
             <div class="radio">
               <label class="i-checks">
                 <input type="radio" name="a" disabled>
                 <i></i>
-                Option four disabled
+                选项4禁用
               </label>
             </div>
 
@@ -253,35 +253,35 @@
               <label class="i-checks i-checks-sm">
                 <input type="radio" name="a">
                 <i></i>
-                Small size radio
+                小规格单选
               </label>
             </div>
             <div class="checkbox">
               <label class="i-checks i-checks-sm">
                 <input type="checkbox">
                 <i></i>
-                Small size checkbox
+                小规格多选
               </label>
             </div>
             <div class="m-b-xs m-t">
               <label class="i-checks i-checks-lg">
                 <input type="radio" name="a">
                 <i></i>
-                Large size radio
+                大规格单选
               </label>
             </div>
             <div class="checkbox">
               <label class="i-checks i-checks-lg">
                 <input type="checkbox">
                 <i></i>
-                Large size checkbox
+                大规格多选
               </label>
             </div>
           </div>
         </div>
         <div class="line line-dashed b-b line-lg pull-in"></div>
         <div class="form-group">
-          <label class="col-sm-2 control-label">Inline checkboxes</label>
+          <label class="col-sm-2 control-label">同行多选</label>
           <div class="col-sm-10">
             <label class="checkbox-inline i-checks">
               <input type="checkbox" value="option1"><i></i> a
@@ -297,7 +297,7 @@
 
         <div class="line line-dashed b-b line-lg pull-in"></div>
         <div class="form-group">
-          <label class="col-sm-2 control-label">Switch</label>
+          <label class="col-sm-2 control-label">开关</label>
           <div class="col-sm-10">
             <label class="i-switch m-t-xs m-r">
               <input type="checkbox" checked>
@@ -320,7 +320,7 @@
 
         <div class="line line-dashed b-b line-lg pull-in"></div>
         <div class="form-group">
-          <label class="col-sm-2 control-label">Radio Switch</label>
+          <label class="col-sm-2 control-label">单选开关</label>
           <div class="col-sm-10">
             <label class="i-switch bg-primary m-t-xs m-r">
               <input type="radio" name='switch' checked>
@@ -335,7 +335,7 @@
 
         <div class="line line-dashed b-b line-lg pull-in"></div>
         <div class="form-group">
-          <label class="col-sm-2 control-label">Switch size</label>
+          <label class="col-sm-2 control-label">开关大小</label>
           <div class="col-sm-10">
             <label class="i-switch i-switch-md bg-info m-t-xs m-r">
               <input type="checkbox" checked>
@@ -350,48 +350,48 @@
 
         <div class="line line-dashed b-b line-lg pull-in"></div>
         <div class="form-group">
-          <label class="col-sm-2 control-label">Select</label>
+          <label class="col-sm-2 control-label">选择</label>
           <div class="col-sm-10">
             <select name="account" class="form-control m-b">
-              <option>option 1</option>
-              <option>option 2</option>
-              <option>option 3</option>
-              <option>option 4</option>
+              <option>选项1</option>
+              <option>选项2</option>
+              <option>选项3</option>
+              <option>选项4</option>
             </select>
             <div class="col-lg-4 m-l-n">
               <select multiple class="form-control">
-                <option>option 1</option>
-                <option>option 2</option>
-                <option>option 3</option>
-                <option>option 4</option>
+                <option>选项1</option>
+                <option>选项2</option>
+                <option>选项3</option>
+                <option>选项4</option>
               </select>
             </div>
           </div>
         </div>
         <div class="line line-dashed b-b line-lg pull-in"></div>
         <div class="form-group has-success">
-          <label class="col-sm-2 control-label">Input with success</label>
+          <label class="col-sm-2 control-label">success输入框</label>
           <div class="col-sm-10">
             <input type="text" class="form-control">
           </div>
         </div>
         <div class="line line-dashed b-b line-lg pull-in"></div>
         <div class="form-group has-warning">
-          <label class="col-sm-2 control-label">Input with warning</label>
+          <label class="col-sm-2 control-label">warning输入框</label>
           <div class="col-sm-10">
             <input type="text" class="form-control">
           </div>
         </div>
         <div class="line line-dashed b-b line-lg pull-in"></div>
         <div class="form-group has-error">
-          <label class="col-sm-2 control-label">Input with error</label>
+          <label class="col-sm-2 control-label">error输入框</label>
           <div class="col-sm-10">
             <input type="text" class="form-control">
           </div>
         </div>
         <div class="line line-dashed b-b line-lg pull-in"></div>
         <div class="form-group">
-          <label class="col-sm-2 control-label">Control sizing</label>
+          <label class="col-sm-2 control-label">control尺寸</label>
           <div class="col-sm-10">
             <input class="form-control input-lg m-b" type="text" placeholder=".input-lg">
             <input class="form-control m-b" type="text" placeholder="Default input">
@@ -400,7 +400,7 @@
         </div>
         <div class="line line-dashed b-b line-lg pull-in"></div>
         <div class="form-group">
-          <label class="col-sm-2 control-label">Column sizing</label>
+          <label class="col-sm-2 control-label">column尺寸</label>
           <div class="col-sm-10">
             <div class="row">
               <div class="col-md-2">
@@ -417,7 +417,7 @@
         </div>
         <div class="line line-dashed b-b line-lg pull-in"></div>
         <div class="form-group">
-          <label class="col-sm-2 control-label">Input groups</label>
+          <label class="col-sm-2 control-label">输入框组</label>
           <div class="col-sm-10">
             <div class="input-group m-b">
               <span class="input-group-addon">@</span>
@@ -448,7 +448,7 @@
         </div>
         <div class="line line-dashed b-b line-lg pull-in"></div>
         <div class="form-group">
-          <label class="col-sm-2 control-label">Button addons</label>
+          <label class="col-sm-2 control-label">按钮组合</label>
           <div class="col-sm-10">
             <div class="input-group m-b">
               <span class="input-group-btn">
@@ -466,17 +466,17 @@
         </div>
         <div class="line line-dashed b-b line-lg pull-in"></div>
         <div class="form-group">
-          <label class="col-sm-2 control-label">With dropdowns</label>
+          <label class="col-sm-2 control-label">下拉组合</label>
           <div class="col-sm-10">
             <div class="input-group m-b">
               <div class="input-group-btn dropdown" dropdown>
-                <button type="button" class="btn btn-default" dropdown-toggle>Action <span class="caret"></span></button>
+                <button type="button" class="btn btn-default" dropdown-toggle>操作 <span class="caret"></span></button>
                 <ul class="dropdown-menu">
-                  <li><a href>Action</a></li>
-                  <li><a href>Another action</a></li>
-                  <li><a href>Something else here</a></li>
+                  <li><a href>操作</a></li>
+                  <li><a href>第二个操作</a></li>
+                  <li><a href>第三个操作</a></li>
                   <li class="divider"></li>
-                  <li><a href>Separated link</a></li>
+                  <li><a href>分割线</a></li>
                 </ul>
               </div><!-- /btn-group -->
               <input type="text" class="form-control">
@@ -484,13 +484,13 @@
             <div class="input-group">
               <input type="text" class="form-control">
               <div class="input-group-btn dropdown" dropdown>
-                <button type="button" class="btn btn-default" dropdown-toggle>Action <span class="caret"></span></button>
+                <button type="button" class="btn btn-default" dropdown-toggle>操作<span class="caret"></span></button>
                 <ul class="dropdown-menu pull-right">
-                  <li><a href>Action</a></li>
-                  <li><a href>Another action</a></li>
-                  <li><a href>Something else here</a></li>
+                  <li><a href>操作</a></li>
+                  <li><a href>第二个操作</a></li>
+                  <li><a href>第三个操作</a></li>
                   <li class="divider"></li>
-                  <li><a href>Separated link</a></li>
+                  <li><a href>分割线</a></li>
                 </ul>
               </div><!-- /btn-group -->
             </div>
@@ -498,18 +498,18 @@
         </div>
         <div class="line line-dashed b-b line-lg pull-in"></div>
         <div class="form-group">
-          <label class="col-sm-2 control-label">Segmented</label>
+          <label class="col-sm-2 control-label">分离下拉组合</label>
           <div class="col-sm-10">
             <div class="input-group m-b">
               <div class="input-group-btn dropdown" dropdown>
-                <button type="button" class="btn btn-default" tabindex="-1">Action</button>
+                <button type="button" class="btn btn-default" tabindex="-1">操作</button>
                 <button type="button" class="btn btn-default" dropdown-toggle><span class="caret"></span></button>
                 <ul class="dropdown-menu">
-                  <li><a href>Action</a></li>
-                  <li><a href>Another action</a></li>
-                  <li><a href>Something else here</a></li>
+                  <li><a href>操作</a></li>
+                  <li><a href>第二个操作</a></li>
+                  <li><a href>第三个操作</a></li>
                   <li class="divider"></li>
-                  <li><a href>Separated link</a></li>
+                  <li><a href>分割线</a></li>
                 </ul>
               </div><!-- /btn-group -->
               <input type="text" class="form-control">
@@ -517,14 +517,14 @@
             <div class="input-group">
               <input type="text" class="form-control">
               <div class="input-group-btn dropdown" dropdown>
-                <button type="button" class="btn btn-default" tabindex="-1">Action</button>
+                <button type="button" class="btn btn-default" tabindex="-1">操作</button>
                 <button type="button" class="btn btn-default" dropdown-toggle><span class="caret"></span></button>
                 <ul class="dropdown-menu pull-right">
-                  <li><a href>Action</a></li>
-                  <li><a href>Another action</a></li>
-                  <li><a href>Something else here</a></li>
+                  <li><a href>操作</a></li>
+                  <li><a href>第二个操作</a></li>
+                  <li><a href>第三个操作</a></li>
                   <li class="divider"></li>
-                  <li><a href>Separated link</a></li>
+                  <li><a href>分割线</a></li>
                 </ul>
               </div><!-- /btn-group -->
             </div>
@@ -534,31 +534,31 @@
         
         <div class="line line-dashed b-b line-lg pull-in"></div>
         <div class="form-group">
-          <label class="col-sm-2 control-label">Button radio</label>
+          <label class="col-sm-2 control-label">单选按钮</label>
           <div class="col-sm-10">
             <div class="btn-group m-r" ng-controller="ButtonsDemoCtrl" >
-              <label class="btn btn-default" ng-model="radioModel" btn-radio="'Left'" uncheckable>Left</label>
-              <label class="btn btn-default" ng-model="radioModel" btn-radio="'Middle'" uncheckable>Middle</label>
-              <label class="btn btn-default" ng-model="radioModel" btn-radio="'Right'" uncheckable>Right</label>
+              <label class="btn btn-default" ng-model="radioModel" btn-radio="'Left'" uncheckable>左</label>
+              <label class="btn btn-default" ng-model="radioModel" btn-radio="'Middle'" uncheckable>中</label>
+              <label class="btn btn-default" ng-model="radioModel" btn-radio="'Right'" uncheckable>右</label>
             </div>
           </div>
         </div>
 
         <div class="line line-dashed b-b line-lg pull-in"></div>
         <div class="form-group">
-          <label class="col-sm-2 control-label">Button checkbox</label>
+          <label class="col-sm-2 control-label">多选按钮</label>
           <div class="col-sm-10">
             <div class="btn-group">
-                <label class="btn btn-default" ng-model="checkModel.left" btn-checkbox>Left</label>
-                <label class="btn btn-default" ng-model="checkModel.middle" btn-checkbox>Middle</label>
-                <label class="btn btn-default" ng-model="checkModel.right" btn-checkbox>Right</label>
+                <label class="btn btn-default" ng-model="checkModel.left" btn-checkbox>左</label>
+                <label class="btn btn-default" ng-model="checkModel.middle" btn-checkbox>中</label>
+                <label class="btn btn-default" ng-model="checkModel.right" btn-checkbox>右</label>
             </div>
           </div>          
         </div>
 
         <div class="line line-dashed b-b line-lg pull-in"></div>
         <div class="form-group">
-          <label class="col-sm-2 control-label">Slider</label>
+          <label class="col-sm-2 control-label">滑杆</label>
           <div class="col-sm-10">
             <input id="slider" ui-jq="slider" ui-options="{
               min: 0,
@@ -571,7 +571,7 @@
 
         <div class="line line-dashed b-b line-lg pull-in"></div>
         <div class="form-group">
-          <label class="col-sm-2 control-label">Vertical slider</label>
+          <label class="col-sm-2 control-label">纵向滑杆</label>
           <div class="col-sm-10">
             <input ui-jq="slider" class="slider slider-vertical form-control" type="text" value="" data-slider-min="5" data-slider-max="20" data-slider-step="1" data-slider-value="11" data-slider-orientation="vertical">
             <input ui-jq="slider" class="slider slider-vertical form-control" type="text" value="" data-slider-min="5" data-slider-max="20" data-slider-step="1" data-slider-value="15" data-slider-orientation="vertical">
@@ -581,7 +581,7 @@
 
         <div class="line line-dashed b-b line-lg pull-in"></div>
         <div class="form-group">
-          <label class="col-sm-2 control-label">Range selector</label>
+          <label class="col-sm-2 control-label">范围选择</label>
           <div class="col-sm-10">
             <input type="text" ui-jq="slider" class="slider form-control" value="" data-slider-min="10" data-slider-max="1000" data-slider-step="5" data-slider-value="[250,750]" >
           </div>
@@ -589,7 +589,7 @@
 
         <div class="line line-dashed b-b line-lg pull-in"></div>
         <div class="form-group">
-          <label class="col-sm-2 control-label">Spinner</label>
+          <label class="col-sm-2 control-label">数字调节</label>
           <div class="col-sm-10">
             <div class="m-b">
               <input ui-jq="TouchSpin" type="text" value="0" class="form-control" data-min='0' data-max="10" data-step="0.1" data-decimals="2" data-prefix="$">
@@ -605,7 +605,7 @@
 
         <div class="line line-dashed b-b line-lg pull-in"></div>
         <div class="form-group">
-          <label class="col-sm-2 control-label">Chosen</label>
+          <label class="col-sm-2 control-label">带搜索下拉框</label>
           <div class="col-sm-10">
             <select ui-jq="chosen" class="w-md">
                 <optgroup label="Alaskan/Hawaiian Time Zone">
@@ -669,7 +669,7 @@
 
         <div class="line line-dashed b-b line-lg pull-in"></div>
         <div class="form-group">
-          <label class="col-sm-2 control-label">Chosen multiple</label>
+          <label class="col-sm-2 control-label">多选下拉</label>
           <div class="col-sm-10">
             <select ui-jq="chosen" multiple class="w-md">
               <option value="AK">Alaska</option>
@@ -684,7 +684,7 @@
 
         <div class="line line-dashed b-b line-lg pull-in"></div>
         <div class="form-group">
-          <label class="col-sm-2 control-label">Datepicker</label>
+          <label class="col-sm-2 control-label">日期选择</label>
           <div class="col-sm-10" ng-controller="DatepickerDemoCtrl">
             <div class="input-group w-md">
               <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt" is-open="opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
@@ -697,14 +697,14 @@
 
         <div class="line line-dashed b-b line-lg pull-in"></div>
         <div class="form-group">
-          <label class="col-sm-2 control-label">File input</label>
+          <label class="col-sm-2 control-label">文件上传</label>
           <div class="col-sm-10">
             <input ui-jq="filestyle" type="file" data-icon="false" data-classButton="btn btn-default" data-classInput="form-control inline v-middle input-s">
           </div>
         </div>
         <div class="line line-dashed b-b line-lg pull-in"></div>
         <div class="form-group">
-          <label class="col-sm-2 control-label">Wysiwyg</label>
+          <label class="col-sm-2 control-label">Wysiwyg富文本</label>
           <div class="col-sm-10">
             <div class="btn-toolbar m-b-sm btn-editor" data-role="editor-toolbar" data-target="#editor">
               <div class="btn-group dropdown" dropdown>
@@ -771,8 +771,8 @@
         <div class="line line-dashed b-b line-lg pull-in"></div>
         <div class="form-group">
           <div class="col-sm-4 col-sm-offset-2">
-            <button type="submit" class="btn btn-default">Cancel</button>
-            <button type="submit" class="btn btn-primary">Save changes</button>
+            <button type="submit" class="btn btn-default">取消</button>
+            <button type="submit" class="btn btn-primary">保存</button>
           </div>
         </div>
       </form>

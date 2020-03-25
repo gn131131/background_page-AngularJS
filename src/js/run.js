@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-03-10 18:29:44
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-17 11:52:05
+ * @LastEditTime: 2020-03-25 17:16:07
  */
 const run = ['$templateCache', '$rootScope', '$state', '$stateParams', ($templateCache, $rootScope, $state, $stateParams) => {
   $rootScope.$state = $state;
@@ -14,6 +14,8 @@ const run = ['$templateCache', '$rootScope', '$state', '$stateParams', ($templat
   $templateCache.put('aside.html', require('../templates/aside.html').default);
   $templateCache.put('settings.html', require('../templates/settings.html').default);
   $templateCache.put('nav.html', require('../templates/nav.html').default);
+  $templateCache.put('modal.form.html', require('../templates/modal.form.html').default);
+  $templateCache.put('modal.html', require('../templates/modal.html').default);
 }];
 
 export default run;

@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-03-06 13:24:30
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-25 11:38:00
+ * @LastEditTime: 2020-03-25 16:39:10
  */
 const commonImages = {
   logo: require('../../assets/images/logo.png').default,
@@ -64,17 +64,17 @@ const login = {
 
 const note = {
   "notes": [{
-      "content": "AngularJS - HTML enhanced for web apps!",
+      "content": "AngularJS",
       "color": "warning",
       "date": 1410788931159
     },
     {
-      "content": "Meeting",
+      "content": "会议",
       "color": "primary",
       "date": 1410788631159
     },
     {
-      "content": "Keep watching",
+      "content": "关注",
       "color": "success",
       "date": 1410788731159
     }
