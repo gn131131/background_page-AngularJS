@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-03-04 14:42:02
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-10 17:40:54
+ * @LastEditTime: 2020-03-26 10:46:42
  -->
 <div class="container w-xxl w-auto-xs" ng-init="app.settings.container = false;">
   <a href class="navbar-brand block m-t">{{app.name}}</a>
@@ -18,14 +18,14 @@
       </div>
       <div class="list-group list-group-sm">
         <div class="list-group-item">
-          <input type="text" placeholder="用户名" class="form-control no-border" ng-model="vm.username" required>
+          <input type="text" placeholder="用户名admin" class="form-control no-border" ng-model="vm.username" required>
         </div>
         <div class="list-group-item">
-           <input type="password" placeholder="密码" class="form-control no-border" ng-model="vm.password" required>
+           <input type="password" placeholder="密码123456" class="form-control no-border" ng-model="vm.password" required>
         </div>
       </div>
       <div class="line line-dashed"></div>
-      <button type="submit" class="btn btn-lg btn-primary btn-block" ng-click="vm.login()" ng-disabled='form.$invalid'>登录</button>
+      <button type="submit" class="btn btn-lg btn-primary btn-block" ng-click="vm.signin()" ng-disabled='form.$invalid'>登录</button>
     </form>
   </div>
 </div>

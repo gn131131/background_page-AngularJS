@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-03-03 18:23:06
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-24 16:41:49
+ * @LastEditTime: 2020-03-26 10:59:39
  */
 const ocLazyLoadFn = ($ocLazyLoad, urls, modules, vendors) => {
   let arr = [];
@@ -53,7 +53,7 @@ const ocLazyLoadFn = ($ocLazyLoad, urls, modules, vendors) => {
 };
 
 const router = ['$urlRouterProvider', '$stateProvider', ($urlRouterProvider, $stateProvider) => {
-  $urlRouterProvider.otherwise('/access/login');
+  $urlRouterProvider.otherwise('/access/signin');
 
   $stateProvider
     // access
@@ -61,14 +61,14 @@ const router = ['$urlRouterProvider', '$stateProvider', ($urlRouterProvider, $st
       url: '/access',
       template: '<div ui-view class="fade-in-right-big smooth"></div>'
     })
-    .state('access.login', {
-      url: '/login',
-      template: require('./controllers/access/login/login.template.html').default,
-      controller: 'LoginController',
+    .state('access.signin', {
+      url: '/signin',
+      template: require('./controllers/access/signin/signin.template.html').default,
+      controller: 'SigninController',
       controllerAs: 'vm',
       resolve: {
         deps: ['$ocLazyLoad', ($ocLazyLoad) => {
-          return ocLazyLoadFn($ocLazyLoad, ['./controllers/access/login/login']);
+          return ocLazyLoadFn($ocLazyLoad, ['./controllers/access/signin/signin']);
         }]
       }
     })

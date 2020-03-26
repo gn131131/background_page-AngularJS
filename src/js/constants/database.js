@@ -53,7 +53,7 @@ const commonImages = {
   c9: require('../../assets/images/c9.jpg').default
 };
 
-const login = {
+const signin = {
   username: 'admin',
   password: '123456',
   authError: {
@@ -217,7 +217,7 @@ const contact = {
 
 const database = {
   commonImages,
-  login,
+  signin,
   note,
   contact
 };

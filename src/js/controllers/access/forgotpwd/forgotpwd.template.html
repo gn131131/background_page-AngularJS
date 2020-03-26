@@ -1,8 +1,16 @@
+<!--
+ * @Description: 
+ * @Version: 1.0
+ * @Autor: Pumpking
+ * @Date: 2020-03-25 11:02:18
+ * @LastEditors: Pumpking
+ * @LastEditTime: 2020-03-26 11:55:03
+ -->
 <div class="container w-xl w-auto-xs" ng-init="app.settings.container = false;">
   <a href class="navbar-brand block m-t">{{app.name}}</a>
   <div class="m-b-lg">
     <div class="wrapper text-center">
-      <strong>Input your email to reset your password</strong>
+      <strong>输入email来重置密码</strong>
     </div>
     <form name="reset" ng-init="isCollapsed=true">
       <div class="list-group list-group-sm">
@@ -10,13 +18,12 @@
           <input type="email" placeholder="Email" ng-model="email" class="form-control no-border" required>
         </div>
       </div>
-      <button type="submit" ng-disabled="reset.$invalid" class="btn btn-lg btn-primary btn-block"  ng-click="isCollapsed = !isCollapsed" >Send</button>
+      <button type="submit" ng-disabled="reset.$invalid" class="btn btn-lg btn-primary btn-block"  ng-click="isCollapsed = !isCollapsed" >发送</button>
     </form>
     <div collapse="isCollapsed" class="m-t">
       <div class="alert alert-success">
-        <p>A reset link sent to your email address, please check it in 7 days. <a ui-sref="access.signin" class="btn btn-sm btn-success">Sign in</a></p>
+        <p>一封email已发送到您的邮箱里，请7天内根据邮件内说明重置密码 <a ui-sref="access.signin" class="btn btn-sm btn-success">登录</a></p>
       </div>
     </div>
   </div>
-  <div class="text-center" ng-include="'tpl/blocks/page_footer.html'"></div>
 </div>

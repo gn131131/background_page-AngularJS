@@ -10,6 +10,6 @@ const target = '/api'; // ；拦截名，要与webpack.dev.js中设置一样
 export default angular.module('ajaxAddress', [])
   .factory('path', [() => {
     return {
-      login: target + '/a/login'
+      signin: target + '/a/login'
     }
   }]);

@@ -4,13 +4,13 @@
  * @Autor: Pumpking
  * @Date: 2020-03-20 14:55:01
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-20 14:55:02
+ * @LastEditTime: 2020-03-26 11:01:38
  */
 export default angular.module('ajaxService', [])
   .factory('ajax', ['$http', 'path', ($http, path) => {
     return {
-      login(params) {
-        return $http.post(path.login, params);
+      signin(params) {
+        return $http.post(path.signin, params);
       }
     }
   }]);
