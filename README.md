@@ -10,6 +10,3 @@
 Angular.js编写的后台+Angulr后台管理移植
 首页域名：www.pumpking.xyz
 域名：angular.pumpking.xyz
-1.登录页移植完成
-2.dashboard页面移植完成
-3.cdn懒加载调试中
