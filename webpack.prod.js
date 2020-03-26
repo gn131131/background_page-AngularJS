@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-03-03 19:59:49
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-24 17:01:40
+ * @LastEditTime: 2020-03-26 16:13:43
  */
 const webpack = require("webpack");
 const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
@@ -32,10 +32,9 @@ module.exports = merge(common, {
   optimization: {
     minimizer: [
       new UglifyJSPlugin({
-        sourceMap: true,
         uglifyOptions: {
           mangle: false,
-          compress: true
+          parallel: true
         }
       })
     ]
