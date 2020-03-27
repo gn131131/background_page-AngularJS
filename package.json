@@ -10,7 +10,7 @@
   "scripts": {
     "server": "node server.js",
     "deploy": "gh-pages -d dist",
-    "analyse": "webpack --config webpack.analyse.js",
+    "analyse": "webpack --config webpack.analyze.js",
     "build": "webpack --config webpack.prod.js",
     "start": "webpack-dev-server --config webpack.dev.js"
   },
