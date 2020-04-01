@@ -1,5 +1,6 @@
-node_modules
+/node_modules
+/.vscode
+/dist
 yarn-error.log
 yarn.lock
 deploy.sh
-.vscode
