@@ -9,10 +9,10 @@
   "license": "MIT",
   "scripts": {
     "server": "node server.js",
-    "deploy": "cp CNAME ./dist/ && cp ./dist/index.html ./dist/404.html && gh-pages -d dist",
-    "analyse": "webpack --config webpack.analyze.js",
+    "start": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "start": "webpack-dev-server --config webpack.dev.js"
+    "analyse": "webpack --config webpack.analyze.js",
+    "deploy": "cp CNAME ./dist/ && cp ./dist/index.html ./dist/404.html && gh-pages -d dist"
   },
   "sideEffects": [
     "*.css"
