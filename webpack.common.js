@@ -4,7 +4,7 @@
  * @Autor: Pumpking
  * @Date: 2020-02-11 16:13:25
  * @LastEditors: Pumpking
- * @LastEditTime: 2020-03-24 16:25:59
+ * @LastEditTime: 2020-04-02 15:16:24
  */
 const path = require("path");
 const webpack = require("webpack");
@@ -94,11 +94,6 @@ module.exports = {
       filename: "index.html",
       template: "./index.html",
       favicon: "./favicon.ico",
-      hash: true
-    }),
-    new HtmlWebpackPlugin({
-      filename: "404.html",
-      template: "./404.html",
       hash: true
     })
   ],
