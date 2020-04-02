@@ -20,7 +20,7 @@ module.exports = merge(common, {
   mode: "production",
   plugins: [
     new CleanWebpackPlugin({
-      cleanOnceBeforeBuildPatterns: ['!CNAME', '*.build.js'],
+      cleanOnceBeforeBuildPatterns: ['*.build.js'],
       cleanStaleWebpackAssets: false,
       protectWebpackAssets: false
     }),
